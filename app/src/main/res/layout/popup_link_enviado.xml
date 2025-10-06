@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="#120D44"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_margin="24dp"
+    android:backgroundTintMode="src_in">
+
+    <TextView
+        android:id="@+id/txtMensagemPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="Link enviado para o seu endereço de email!"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnVoltarPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:padding="10dp"
+        android:text="Voltar"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+</LinearLayout>

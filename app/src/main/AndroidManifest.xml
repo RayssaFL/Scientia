@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Scientia"
+        tools:targetApi="31">
+        <activity
+            android:name=".TelaPerfilUsuarios_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaInfoLivroAndamento_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEmpAndamento_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEditarLivro_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaPerfilAutor_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaAutores_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaDescLivroAvaliacoes_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaHistoricoLivros_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaDescLivro_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLivroBarraPesquisa_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaChat_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaContato_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaHome_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEdicaoInfoLivro_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEditarEvento_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaAdicionarEvento_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaAutorizarEmp_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaDescEmpAberto_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEmpAberto_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaAvaliacoes_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaConfiguracao_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEventos_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaVisualizarEventos_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaNotificacoes_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaPerfil_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaCadastro_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRedefinirSenha_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLogin_User"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRedefinirSenha_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLogin_Adm"
+            android:exported="false" />
+        <activity
+            android:name=".TelaMenu_User"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
