@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".TelaEditarInfoLivro_Adm">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/BarraNavegaçãoEditarInfoLivro"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#241B61"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/menu_edit_livro"
+            app:title="Editar Livro"
+            app:titleCentered="true"
+            app:titleTextColor="#FFFFFF" />
+
+        <ScrollView
+            android:layout_width="420dp"
+            android:layout_height="772dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+            app:layout_constraintTop_toBottomOf="@+id/BarraNavegaçãoEditarInfoLivro"
+            tools:layout_editor_absoluteX="-6dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layLivrosEmpRealizados"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="#FFFFFFFF"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tvInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Informações"
+                        android:textColor="#000000"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardInfos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    app:cardBackgroundColor="#E0E0E0"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgCapa"
+                                android:layout_width="122dp"
+                                android:layout_height="202dp"
+                                android:background="@drawable/capa"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_edit2"
+                                app:tint="#CEC9C9" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <EditText
+                                    android:id="@+id/edtTitulo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="@android:color/white"
+                                    android:hint="Álgebra Linear"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/edtAutor"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="@android:color/white"
+                                    android:hint="Howard Anton"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/edtAno"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="@android:color/white"
+                                    android:hint="2012"
+                                    android:inputType="number"
+                                    android:padding="8dp" />
+
+                                <EditText
+                                    android:id="@+id/edtIdLivro"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:background="@android:color/white"
+                                    android:hint="ID: 123453"
+                                    android:inputType="number"
+                                    android:padding="8dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edtDescricao"
+                            android:layout_width="366dp"
+                            android:layout_height="227dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@android:color/white"
+                            android:gravity="top"
+                            android:hint="Álgebra Linear com Aplicações, 10.ed., apresenta os fundamentos da álgebra linear. O texto foi escrito de forma que não é necessário conhecimento de Cálculo para usar e entender o conteúdo; quando esse requisito for desejável, isso está destacado (esses exercícios e exemplos podem ser omitidos sem prejuízo à continuidade do aprendizado). Também não é exigido o uso de recursos computacionais, mas para aqueles que gostam de MATLAB, Maple, Mathematica ou calculadoras com funcionalidade para álgebra linear estão incluídos exercícios no final dos capítulos que permitem um aprofundamento usando tais ferramentas. O último capítulo cobre vinte aplicações de álgebra linear das mais diversas áreas: administração, economia, física, ciência da computação, ecologia, genética e outras. As aplicações são independentes e cada uma inclui uma lista de pré-requisitos matemáticos."
+                            android:minHeight="100dp"
+                            android:padding="8dp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardQtds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="130dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="12dp"
+                    app:cardBackgroundColor="#E0E0E0"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Quantidade Total:"
+                                android:textColor="#000000"
+                                android:textSize="20dp" />
+
+                            <EditText
+                                android:id="@+id/edtQtdTotal"
+                                android:layout_width="236dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="@android:color/white"
+                                android:hint="3"
+                                android:inputType="number"
+                                android:padding="6dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="358dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvQtdDisponivel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Quantidade Disponível:"
+                                android:textColor="#000000"
+                                android:textSize="20dp" />
+
+                            <EditText
+                                android:id="@+id/edtQtdDisp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_weight="1"
+                                android:background="@android:color/white"
+                                android:hint="3"
+                                android:inputType="number"
+                                android:padding="6dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="388dp"
+                    android:layout_height="66dp"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnConfirmarEdtLivro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="70dp"
+                        android:backgroundTint="#4CAF50"
+                        android:text="Confirmar"
+                        android:textColor="@android:color/white" />
+
+                    <Button
+                        android:id="@+id/btnCancelarEdtLivro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#B71C1C"
+                        android:text="Cancelar"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#241B61"
+            app:itemIconTint="@color/nav_item_color"
+            app:itemTextColor="@color/nav_item_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_nav_menu">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

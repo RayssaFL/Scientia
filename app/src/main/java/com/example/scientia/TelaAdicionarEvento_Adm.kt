@@ -1,20 +1,37 @@
 package com.example.scientia
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 
 class TelaAdicionarEvento_Adm : AppCompatActivity() {
+
+    lateinit var btnCancelar: Button
+    lateinit var btnSalvar: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_tela_adicionar_evento_adm)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+
+        btnCancelar = findViewById(R.id.btnCancelarEvt)
+        btnSalvar = findViewById(R.id.btnSalvarEvt)
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        btnSalvar.setOnClickListener {
+            Toast.makeText(this, "Evento Salvo Com Sucesso!", Toast.LENGTH_SHORT).show()
         }
+
+        btnCancelar.setOnClickListener {
+            Toast.makeText(this, "Adição De Evento Cancelado", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }
