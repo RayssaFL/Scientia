@@ -1,130 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".PerfilUserFragment">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#2E1A77">
+        android:layout_height="match_parent">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/BarraNavegaçãoPerfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:background="#241B61"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_arrow_back"
-            app:navigationIconTint="@android:color/white"
-            app:title="Perfil Usuário"
+            app:title="Perfil"
             app:titleCentered="true"
-            app:titleTextColor="@android:color/white" />
+            app:titleTextColor="#FFFFFF" />
 
         <LinearLayout
-            android:id="@+id/centralContent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:id="@+id/layAvatar"
+            android:layout_width="418dp"
+            android:layout_height="364dp"
+            android:background="#241B61"
             android:gravity="center"
-            android:layout_below="@id/toolbar">
-
-            <TextView
-                android:id="@+id/avatar"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:background="@drawable/avatar_circle"
-                android:gravity="center"
-                android:text="L"
-                android:textColor="@android:color/white"
-                android:textSize="48sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/nomeUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Laura Rejane"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/idUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="1205468"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"/>
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@android:color/white">
-
-            <TextView
-                android:id="@+id/nomeUsuarioDetalhe"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nome: Laura Rejane"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BarraNavegaçãoPerfil">
 
             <LinearLayout
+                android:id="@+id/InfoAvatarUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="E-mail: "
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:id="@+id/avatarPefilUser"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:background="@drawable/circulo_avatar"
+                    android:gravity="center"
+                    android:text="R"
+                    android:textColor="#9C8AC4"
+                    android:textSize="48sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/emailUsuario"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/NomeUser"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="lrejane23@gmail.com"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textSize="16sp"/>
+                    android:gravity="center"
+                    android:text="Rafael Monteiro"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/IdUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="2343908"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/quantidadeEmprestimos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quantidade de Empréstimos Total: 0"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:layout_marginTop="8dp"/>
-
-            <TextView
-                android:id="@+id/idUsuarioDetalhe"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ID: 1205468"
-                android:textSize="14sp"
-                android:textColor="@android:color/darker_gray"
-                android:layout_marginTop="8dp"/>
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#241B61"
+            app:itemIconTint="@color/nav_item_color"
+            app:itemTextColor="@color/nav_item_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_nav_menu_user"
+            tools:layout_editor_absoluteX="1dp" />
+
+        <LinearLayout
+            android:id="@+id/InfoLayPerfilUser"
+            android:layout_width="411dp"
+            android:layout_height="247dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layAvatar">
+
+            <TextView
+                android:id="@+id/NomePerfilUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Nome: Rafael Monteiro"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/EmailPerfilUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Email: rafaelmonteir883@gmail.com"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/EmpréstimosPerfilUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Quantidade de Empréstimos Total: 13"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/idPerfilUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="ID: 2343908"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

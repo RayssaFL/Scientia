@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:title="Home"
+        android:icon="@drawable/home"/>
+    <item
+        android:id="@+id/nav_events"
+        android:title="Eventos"
+        android:icon="@drawable/event"/>
+    <item
+        android:id="@+id/nav_contato"
+        android:title="Contato"
+        android:icon="@drawable/icon_contatos"/>
+    <item
+        android:id="@+id/nav_profile"
+        android:title="Perfil"
+        android:icon="@drawable/baseline_account_circle_24"/>
+</menu>

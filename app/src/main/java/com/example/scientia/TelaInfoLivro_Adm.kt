@@ -69,7 +69,7 @@ class TelaInfoLivro_Adm : Fragment() {
 
 
     private fun irTelaEditarLivro() {
-        val intent = Intent(requireContext(), TelaEditarLivro_Adm::class.java)
+        val intent = Intent(requireContext(), TelaEditarInfoLivro_Adm::class.java)
         startActivity(intent)
     }
 }
