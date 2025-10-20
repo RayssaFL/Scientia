@@ -87,7 +87,7 @@
                         android:layout_gravity="top|start"
                         android:layout_marginVertical="16dp"
                         android:layout_marginLeft="16dp"
-                        app:srcCompat="@drawable/Icon_telefone" />
+                        app:srcCompat="@drawable/icon_telefone" />
 
                     <TextView
                         android:id="@+id/textView5"
@@ -256,5 +256,3 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
