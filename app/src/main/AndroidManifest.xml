@@ -17,9 +17,6 @@
             android:name=".TelaPerfilAutor_User"
             android:exported="false" />
         <activity
-            android:name=".TelaAutores_User"
-            android:exported="false" />
-        <activity
             android:name=".TelaDescLivroAvaliacoes_User"
             android:exported="false" />
         <activity
@@ -47,9 +44,6 @@
             android:name=".TelaAvaliacoes_User"
             android:exported="false" />
         <activity
-            android:name=".TelaConfiguracao_User"
-            android:exported="false" />
-        <activity
             android:name=".TelaNotificacoes_User"
             android:exported="false" />
         <activity
@@ -65,7 +59,7 @@
             android:name=".TelaRedefinirSenha_Adm"
             android:exported="false" />
         <activity
-            android:name=".TelaLogin_Adm"
+            android:name=".TelaEditarInfoLivro_Adm"
             android:exported="false" />
         <activity
             android:name=".TelaMenu_User"
@@ -92,7 +86,7 @@
             android:name=".TelaAutorizarEmp_Adm"
             android:exported="true" />
         <activity
-            android:name=".TelaEditarInfoLivro_Adm"
+            android:name=".TelaLogin_Adm"
             android:exported="true" >
 
             <intent-filter>

@@ -32,8 +32,11 @@ class TelaLogin_Adm : AppCompatActivity() {
             validarCadastro()
         }
         esqueceuSenha.setOnClickListener {
-            val intencao = Intent(this, TelaRedefinirSenha_Adm::class.java)
-            startActivity(intencao)
+//            val intencao = Intent(this, TelaRedefinirSenha_Adm::class.java)
+//            startActivity(intencao)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main, TelaAutores_User())
+                .commit()
         }
     }
     private fun validarCadastro(){

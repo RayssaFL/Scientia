@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaConfiguracao_Adm">
+    tools:context=".TelaConfiguracao_User">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/BarraNavegacaoConfigLivro"
+            android:id="@+id/BarraNavegacaoConfigLivro_User"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#241B61"
@@ -25,7 +25,7 @@
             app:titleTextColor="@android:color/white" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardTema"
+            android:id="@+id/cardTema_User"
             android:layout_width="370dp"
             android:layout_height="70dp"
             android:layout_margin="16dp"
@@ -33,7 +33,7 @@
             app:cardCornerRadius="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BarraNavegacaoConfigLivro">
+            app:layout_constraintTop_toBottomOf="@+id/BarraNavegacaoConfigLivro_User">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/tema"
+                    android:id="@+id/tema_User"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="150dp"
@@ -66,7 +66,7 @@
                         android:src="@drawable/ic_sun" />
 
                     <Switch
-                        android:id="@+id/switchTema"
+                        android:id="@+id/switchTema_User"
                         android:layout_width="50sp"
                         android:layout_height="48sp"
                         android:layout_marginHorizontal="0dp"
@@ -84,7 +84,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardFonte"
+            android:id="@+id/cardFonte_User"
             android:layout_width="370dp"
             android:layout_height="170dp"
             android:layout_marginHorizontal="16dp"
@@ -93,7 +93,7 @@
             app:cardCornerRadius="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardTema">
+            app:layout_constraintTop_toBottomOf="@+id/cardTema_User">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -102,7 +102,7 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/tamFonte"
+                    android:id="@+id/tamFonte_User"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
@@ -112,7 +112,7 @@
                     android:textStyle="bold" />
 
                 <SeekBar
-                    android:id="@+id/barraTamanhoFonte"
+                    android:id="@+id/barraTamanhoFonte_User"
                     style="@style/Widget.AppCompat.SeekBar.Discrete"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
@@ -127,14 +127,14 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/menorFonte"
+                        android:id="@+id/menorFonte_User"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="A"
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/normalFonte"
+                        android:id="@+id/normalFonte_User"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="140dp"
@@ -142,7 +142,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/grandeFonte"
+                        android:id="@+id/grandeFonte_User"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="A"
@@ -152,7 +152,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardSair"
+            android:id="@+id/cardSair_User"
             android:layout_width="370dp"
             android:layout_height="61dp"
             android:layout_margin="16dp"
@@ -161,10 +161,10 @@
             app:cardCornerRadius="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardFonte">
+            app:layout_constraintTop_toBottomOf="@+id/cardFonte_User">
 
             <LinearLayout
-                android:id="@+id/sairAdm"
+                android:id="@+id/sairLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -177,7 +177,7 @@
                     android:src="@drawable/ic_logout" />
 
                 <TextView
-                    android:id="@+id/sairApp"
+                    android:id="@+id/sairApp_User"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"

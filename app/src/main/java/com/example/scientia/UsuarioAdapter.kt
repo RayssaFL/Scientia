@@ -13,8 +13,8 @@ class UsuarioAdapter(
 ) : RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder>() {
 
     inner class UsuarioViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val avatar: TextView = view.findViewById(R.id.avatarUsuario)
-        val nome: TextView = view.findViewById(R.id.nomeUsuarioItem)
+        val avatar: TextView = view.findViewById(R.id.avatarAutores)
+        val nome: TextView = view.findViewById(R.id.nomeAutoresItem)
         val btnExpand: ImageView = view.findViewById(R.id.btnExpandUsuario)
         val detalhesLayout: LinearLayout = view.findViewById(R.id.layoutDetalhesUsuario)
         val dataEmprestimo: TextView = view.findViewById(R.id.dataEmprestimo)

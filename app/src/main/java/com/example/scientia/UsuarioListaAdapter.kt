@@ -12,8 +12,8 @@ class UsuarioListaAdapter(
 ) : RecyclerView.Adapter<UsuarioListaAdapter.UsuarioViewHolder>() {
 
     inner class UsuarioViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val avatar: TextView = view.findViewById(R.id.avatarUsuario)
-        val nome: TextView = view.findViewById(R.id.nomeUsuarioItem)
+        val avatar: TextView = view.findViewById(R.id.avatarAutores)
+        val nome: TextView = view.findViewById(R.id.nomeAutoresItem)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsuarioViewHolder {
