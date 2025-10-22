@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.scientia.R
 import com.google.android.material.appbar.MaterialToolbar
 
 class TelaPerfilUsuarios_Adm : Fragment() {
@@ -40,6 +39,6 @@ class TelaPerfilUsuarios_Adm : Fragment() {
         view.findViewById<TextView>(R.id.idUsuarioDetalhe).text = "ID: $idUsuario"
         view.findViewById<TextView>(R.id.quantidadeEmprestimos).text =
             "Quantidade de Empréstimos Total: $quantidadeEmprestimos"
-        view.findViewById<TextView>(R.id.emailUsuario).text = emailUsuario
+        view.findViewById<TextView>(R.id.EmailAdm).text = emailUsuario
     }
 }

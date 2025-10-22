@@ -100,7 +100,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/emailUsuario"
+                    android:id="@+id/EmailAdm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="lrejane23@gmail.com"

@@ -27,16 +27,15 @@ class TelaLogin_Adm : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        super.onStart()
         btnEntrar.setOnClickListener {
             validarCadastro()
         }
         esqueceuSenha.setOnClickListener {
-//            val intencao = Intent(this, TelaRedefinirSenha_Adm::class.java)
-//            startActivity(intencao)
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.main, TelaAutores_User())
-                .commit()
+            val intencao = Intent(this, TelaRedefinirSenha_Adm::class.java)
+            startActivity(intencao)
+//            supportFragmentManager.beginTransaction()
+//                .replace(R.id.main, TelaEmpAberto_User())
+//                .commit()
         }
     }
     private fun validarCadastro(){

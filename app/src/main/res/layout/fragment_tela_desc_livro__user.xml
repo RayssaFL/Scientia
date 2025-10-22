@@ -4,31 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaInfoLivro_Adm">
+    tools:context=".TelaDescLivro_User">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/BarraNavegaçãoInfoLivro"
+            android:id="@+id/BarraNavegacaoInfoLivro_User"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             android:background="#241B61"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/menu_info_livro"
             app:navigationIcon="@drawable/ic_arrow_back"
             app:title="Álgebra Linear"
             app:titleCentered="true"
-            app:titleTextColor="#FFFFFF" />
+            app:titleTextColor="@android:color/white" />
 
         <LinearLayout
-            android:id="@+id/layLivrosEmpRealizados"
+            android:id="@+id/layInfoLivro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFFFF"
@@ -36,7 +33,7 @@
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BarraNavegaçãoInfoLivro">
+            app:layout_constraintTop_toBottomOf="@+id/BarraNavegacaoInfoLivro_User">
 
             <TextView
                 android:id="@+id/textView"
@@ -60,7 +57,7 @@
             app:cardElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layLivrosEmpRealizados">
+            app:layout_constraintTop_toBottomOf="@+id/layInfoLivro">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -140,47 +137,5 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardQtds"
-            android:layout_width="387dp"
-            android:layout_height="75dp"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="10dp"
-            app:cardBackgroundColor="#B3D9FF"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardInfosNot1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="start"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/qtdTotal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Quantidade Total: 3"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="normal" />
-
-                <TextView
-                    android:id="@+id/qtdDisp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Quantidade Disponível: 3"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="normal" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

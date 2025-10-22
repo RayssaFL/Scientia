@@ -15,7 +15,7 @@ import com.example.scientia.TelaInfoLivroAndamento_Adm
 
 class TelaEmpAndamento_Adm : Fragment() {
 
-    private val CONTAINER_ID = R.id.container
+    private val CONTAINER_ID = R.id.container //mudar para pai container
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -85,7 +85,7 @@ class TelaEmpAndamento_Adm : Fragment() {
         fragment.arguments = bundle
 
         parentFragmentManager.beginTransaction()
-            .replace(CONTAINER_ID, fragment)
+            .replace(CONTAINER_ID, fragment)////mudar para pai container
             .addToBackStack("info_livro")
             .commit()
     }
