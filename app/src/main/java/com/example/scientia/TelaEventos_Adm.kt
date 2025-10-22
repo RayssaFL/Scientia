@@ -1,59 +1,112 @@
 package com.example.scientia
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import androidx.activity.addCallback
+import androidx.appcompat.widget.PopupMenu
+import androidx.cardview.widget.CardView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TelaEventos_Adm.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TelaEventos_Adm : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val CONTAINER_ID = R.id.containerFrameLayout
+    private lateinit var cardEvento: CardView
+    private lateinit var viewModel: EventosViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tela_evento__adm, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TelaEvento_Adm.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TelaEventos_Adm().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Inicializa a ViewModel manualmente
+        viewModel = ViewModelProvider(requireActivity())[EventosViewModel::class.java]
+
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbarEvento)
+        toolbar.setNavigationOnClickListener {
+            // Vai direto para a TelaHome ao clicar no botão da Toolbar
+            parentFragmentManager.beginTransaction()
+                .replace(CONTAINER_ID, TelaHome_Adm())
+                .commit()
+        }
+
+        // Intercepta o botão físico de voltar
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            parentFragmentManager.beginTransaction()
+                .replace(CONTAINER_ID, TelaHome_Adm())
+                .commit()
+        }
+
+        val cardAdicionar = view.findViewById<CardView>(R.id.cardAdicionarEvento)
+        cardAdicionar.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(CONTAINER_ID, TelaPerfil_Adm())
+                .addToBackStack("adicionar_evento")
+                .commit()
+        }
+
+        val btnAdd = view.findViewById<ImageButton>(R.id.btnAdd)
+        btnAdd.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(CONTAINER_ID, TelaPerfil_Adm())
+                .addToBackStack("adicionar_evento")
+                .commit()
+        }
+
+        cardEvento = view.findViewById(R.id.cardEvento)
+
+        // Esconde o card se já tiver sido excluído
+        if (viewModel.eventoExcluido) {
+            cardEvento.visibility = View.GONE
+        } else {
+            cardEvento.setOnClickListener {
+                parentFragmentManager.beginTransaction()
+                    .replace(CONTAINER_ID, TelaVisualizarEvento_Adm())
+                    .addToBackStack("visualizar_evento")
+                    .commit()
+            }
+        }
+
+        val btnMenu = view.findViewById<ImageButton>(R.id.menuEvento)
+        btnMenu.setOnClickListener { v ->
+            val popup = PopupMenu(requireContext(), v)
+            popup.menuInflater.inflate(R.menu.menu_evento, popup.menu)
+            popup.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.menu_editar -> {
+                        parentFragmentManager.beginTransaction()
+                            .replace(CONTAINER_ID, TelaEmpAndamento_Adm())
+                            .addToBackStack("editar_evento")
+                            .commit()
+                        true
+                    }
+                    R.id.menu_excluir -> {
+                        excluirCard()
+                        Toast.makeText(requireContext(), "Evento Deletado", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    else -> false
                 }
             }
+            popup.show()
+        }
+    }
+
+    private fun excluirCard() {
+        val parentView = cardEvento.parent as? ViewGroup
+        parentView?.removeView(cardEvento)
+
+        // Marca como excluído na ViewModel
+        viewModel.eventoExcluido = true
     }
 }
