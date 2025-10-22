@@ -58,7 +58,7 @@
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardInfos"
+            android:id="@+id/cardInfoDecEmpAberto"
             android:layout_width="387dp"
             android:layout_height="363dp"
             android:layout_margin="12dp"
@@ -193,7 +193,7 @@
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardInfos">
+            app:layout_constraintTop_toBottomOf="@+id/cardInfoDecEmpAberto">
 
             <TextView
                 android:id="@+id/textView9"
