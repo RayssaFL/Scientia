@@ -101,6 +101,9 @@
             android:exported="true" />
         <activity
             android:name=".TelaEditarInfoLivro_Adm"
+            android:exported="true" />
+        <activity
+            android:name=".TelaBarraFixa_Adm"
             android:exported="true" >
 
             <intent-filter>

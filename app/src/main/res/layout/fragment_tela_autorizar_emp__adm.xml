@@ -126,7 +126,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/editTextDataDevolucao"
+                            android:id="@+id/editTextData"
                             android:layout_width="200dp"
                             android:layout_height="50dp"
                             android:layout_weight="1"
@@ -165,7 +165,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/editTextDataDevolucao"
+                            android:id="@+id/editTextDataDevoluçao"
                             android:layout_width="200dp"
                             android:layout_height="50dp"
                             android:layout_weight="1"
