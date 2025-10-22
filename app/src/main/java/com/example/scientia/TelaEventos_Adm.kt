@@ -29,18 +29,15 @@ class TelaEventos_Adm : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Inicializa a ViewModel manualmente
         viewModel = ViewModelProvider(requireActivity())[EventosViewModel::class.java]
 
         val toolbar = view.findViewById<Toolbar>(R.id.toolbarEvento)
         toolbar.setNavigationOnClickListener {
-            // Vai direto para a TelaHome ao clicar no botão da Toolbar
             parentFragmentManager.beginTransaction()
                 .replace(CONTAINER_ID, TelaHome_Adm())
                 .commit()
         }
 
-        // Intercepta o botão físico de voltar
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             parentFragmentManager.beginTransaction()
                 .replace(CONTAINER_ID, TelaHome_Adm())
@@ -65,7 +62,6 @@ class TelaEventos_Adm : Fragment() {
 
         cardEvento = view.findViewById(R.id.cardEvento)
 
-        // Esconde o card se já tiver sido excluído
         if (viewModel.eventoExcluido) {
             cardEvento.visibility = View.GONE
         } else {
@@ -106,7 +102,6 @@ class TelaEventos_Adm : Fragment() {
         val parentView = cardEvento.parent as? ViewGroup
         parentView?.removeView(cardEvento)
 
-        // Marca como excluído na ViewModel
         viewModel.eventoExcluido = true
     }
 }

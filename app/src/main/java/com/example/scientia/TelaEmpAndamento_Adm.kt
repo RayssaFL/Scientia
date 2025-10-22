@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class TelaEmpAndamento_Adm : Fragment() {
 
-    // Usando o mesmo container da TelaBarraFixa_Adm
     private val CONTAINER_ID = R.id.containerFrameLayout
 
     override fun onCreateView(
