@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_adicionar_livro"
+        android:title="Adicionar Livro" />
+
+    <item
+        android:id="@+id/nav_consultar_emprestimo"
+        android:title="Consultar Empréstimo"
+        android:icon="@drawable/ic_arrow_down" />
+
+    <group
+        android:id="@+id/group_consultar">
+
+        <item
+            android:id="@+id/nav_em_andamento"
+            android:title="   Em Andamento" />
+
+        <item
+            android:id="@+id/nav_realizado"
+            android:title="   Realizado" />
+
+    </group>
+
+
+    <item
+        android:id="@+id/nav_autorizar_emprestimo"
+        android:title="Autorizar Emprestimo" />
+
+    <item
+        android:id="@+id/nav_devolucao_livro"
+        android:title="Devolução de Livro" />
+
+    <item
+        android:id="@+id/nav_users"
+        android:title="Usuários" />
+
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Configurações" />
+
+</menu>
