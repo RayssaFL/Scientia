@@ -65,13 +65,13 @@
             android:name=".TelaRedefinirSenha_Adm"
             android:exported="false" />
         <activity
-            android:name=".TelaLogin_Adm"
+            android:name=".TelaEditarInfoLivro_Adm"
             android:exported="false" />
         <activity
             android:name=".TelaMenu_User"
             android:exported="true"/>
         <activity
-            android:name=".TelaHome_Adm"
+            android:name=".TelaLogin_Adm"
             android:exported="true" />
         <activity
             android:name=".TelaVisualizarEventos_User"
@@ -92,7 +92,7 @@
             android:name=".TelaAutorizarEmp_Adm"
             android:exported="true" />
         <activity
-            android:name=".TelaEditarInfoLivro_Adm"
+            android:name=".TelaHome_Adm"
             android:exported="true" >
 
             <intent-filter>

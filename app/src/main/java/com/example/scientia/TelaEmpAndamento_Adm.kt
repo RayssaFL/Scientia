@@ -1,4 +1,4 @@
-package com.example.naraktelaevento
+package com.example.scientia
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,7 +21,7 @@ class TelaEmpAndamento_Adm : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_tela_emp_realizados__adm, container, false)
+        return inflater.inflate(R.layout.fragment_tela_emp_andamento__adm, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

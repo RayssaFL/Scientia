@@ -8,10 +8,13 @@ import android.widget.ImageButton
 import androidx.appcompat.widget.PopupMenu
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import android.widget.Toast
+
 
 class TelaEvento_Adm : Fragment() {
 
     private val CONTAINER_ID = R.id.container
+    private lateinit var cardEvento: CardView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,12 +42,12 @@ class TelaEvento_Adm : Fragment() {
         val btnAdd = view.findViewById<ImageButton>(R.id.btnAdd)
         btnAdd.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(CONTAINER_ID, FragTelaAdicionarEvento_Adm(),null)
+                .replace(CONTAINER_ID, FragTelaAdicionarEvento_Adm(), null)
                 .addToBackStack("adicionar_evento")
                 .commit()
         }
 
-        val cardEvento = view.findViewById<CardView>(R.id.cardEvento)
+        cardEvento = view.findViewById(R.id.cardEvento)
         cardEvento.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(CONTAINER_ID, TelaVisualizarEvento_Adm())
@@ -52,30 +55,33 @@ class TelaEvento_Adm : Fragment() {
                 .commit()
         }
 
-//        val btnMenu = view.findViewById<ImageButton>(R.id.menuEvento)
-//        btnMenu.setOnClickListener { v ->
-//            val popup = PopupMenu(requireContext(), v)
-//            popup.menuInflater.inflate(R.menu.menu_evento, popup.menu)
-//            popup.setOnMenuItemClickListener { item ->
-//                when (item.itemId) {
-//                    R.id.menu_editar -> {
-//                        parentFragmentManager.beginTransaction()
-//                            .replace(CONTAINER_ID, EditarEventoFragment())
-//                            .addToBackStack("editar_evento")
-//                            .commit()
-//                        true
-//                    }
-//                    R.id.menu_excluir -> {
-//                        parentFragmentManager.beginTransaction()
-//                            .replace(CONTAINER_ID, ExcluirEventoFragment())
-//                            .addToBackStack("excluir_evento")
-//                            .commit()
-//                        true
-//                    }
-//                    else -> false
-//                }
-//            }
-//            popup.show()
-//        }
+        val btnMenu = view.findViewById<ImageButton>(R.id.menuEvento)
+        btnMenu.setOnClickListener { v ->
+            val popup = PopupMenu(requireContext(), v)
+            popup.menuInflater.inflate(R.menu.menu_evento, popup.menu)
+            popup.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.menu_editar -> {
+                        parentFragmentManager.beginTransaction()
+                            .replace(CONTAINER_ID, TelaEmpAndamento_Adm())
+                            .addToBackStack("editar_evento")
+                            .commit()
+                        true
+                    }
+                    R.id.menu_excluir -> {
+                        excluirCard()
+                        Toast.makeText(requireContext(), "Evento Deletado", Toast.LENGTH_SHORT).show()
+                        true
+                    }
+                    else -> false
+                }
+            }
+            popup.show()
+        }
+    }
+
+    private fun excluirCard() {
+        val parentView = cardEvento.parent as ViewGroup
+        parentView?.removeView(cardEvento)
     }
 }

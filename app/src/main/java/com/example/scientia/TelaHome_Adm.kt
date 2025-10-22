@@ -1,14 +1,16 @@
 package com.example.scientia
 
 import android.os.Bundle
+import android.view.View
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.widget.Toolbar
-import android.widget.EditText
-import android.widget.Toast
 
 class TelaHome_Adm : AppCompatActivity() {
 
@@ -28,6 +30,8 @@ class TelaHome_Adm : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar)
         searchBar = findViewById(R.id.searchBar)
 
+        val cardsLayout = findViewById<LinearLayout>(R.id.linearLayout3)
+
         setSupportActionBar(toolbar)
 
         val toggle = ActionBarDrawerToggle(
@@ -38,22 +42,35 @@ class TelaHome_Adm : AppCompatActivity() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        navigationView.setNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_users -> Toast.makeText(this, "Usuários", Toast.LENGTH_SHORT).show()
-                R.id.nav_settings -> Toast.makeText(this, "Configurações", Toast.LENGTH_SHORT).show()
-            }
-            drawerLayout.closeDrawers()
-            true
-        }
-
         bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_home -> Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
-                R.id.nav_events -> Toast.makeText(this, "Eventos", Toast.LENGTH_SHORT).show()
-                R.id.nav_profile -> Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+                R.id.nav_home -> {
+                    cardsLayout.visibility = View.VISIBLE
+                    toolbar.visibility = View.VISIBLE
+                    val fragment = supportFragmentManager.findFragmentById(R.id.container)
+                    if (fragment != null) {
+                        supportFragmentManager.beginTransaction().remove(fragment).commit()
+                    }
+                    true
+                }
+                R.id.nav_events -> {
+                    cardsLayout.visibility = View.GONE
+                    toolbar.visibility = View.GONE
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, TelaEmpAndamento_Adm())
+                        .commit()
+                    true
+                }
+                R.id.nav_profile -> {
+                    cardsLayout.visibility = View.GONE
+                    toolbar.visibility = View.GONE
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, TelaTodosLivros_Adm())
+                        .commit()
+                    true
+                }
+                else -> false
             }
-            true
         }
 
         searchBar.setOnEditorActionListener { v, _, _ ->
