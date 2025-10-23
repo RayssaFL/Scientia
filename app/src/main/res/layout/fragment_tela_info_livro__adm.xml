@@ -1,221 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layoutFrame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaInfoLivro_Adm">
+    android:orientation="vertical"
+    android:background="@android:color/white">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/BarraNavegaçãoInfoLivro"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#241B61"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Álgebra Linear"
+        app:titleCentered="true"
+        app:titleTextColor="@android:color/white" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/BarraNavegaçãoInfoLivro"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#241B61"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/menu_info_livro"
-            app:navigationIcon="@drawable/ic_arrow_back"
-            app:title="Álgebra Linear"
-            app:titleCentered="true"
-            app:titleTextColor="#FFFFFF" />
-
         <LinearLayout
-            android:id="@+id/layLivrosEmpRealizados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFFFF"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/BarraNavegaçãoInfoLivro">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="270dp"
+                android:id="@+id/textViewTituloSecao"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
                 android:text="Informações"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="12dp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardInfos"
-            android:layout_width="387dp"
-            android:layout_height="529dp"
-            android:layout_margin="12dp"
-            app:cardBackgroundColor="#B3D9FF"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layLivrosEmpRealizados">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardInfos"
                 android:layout_width="match_parent"
-                android:layout_height="519dp"
-                android:orientation="vertical"
-                android:padding="12dp">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#B3D9FF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/capaLivro"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="0dp"
-                        android:src="@drawable/capa"
-                        app:layout_constraintStart_toStartOf="parent" />
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <LinearLayout
-                        android:id="@+id/infos"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/tvNomeLivro"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Álgebra Linear"
-                            android:textColor="#000000"
-                            android:textSize="22sp"
-                            android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/capaLivro"
+                            android:layout_width="100dp"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/capa" />
 
-                        <TextView
-                            android:id="@+id/tvAutor"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="3dp"
-                            android:text="Howard Anton"
-                            android:textColor="#555"
-                            android:textSize="16sp" />
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingStart="16dp">
 
-                        <TextView
-                            android:id="@+id/tvAno"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="3dp"
-                            android:text="2012"
-                            android:textColor="#555"
-                            android:textSize="16sp" />
+                            <TextView
+                                android:id="@+id/tvNomeLivro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Álgebra Linear"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black" />
 
-                        <TextView
-                            android:id="@+id/tvIdLivro"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:text="ID: 123453"
-                            android:textColor="#777"
-                            android:textSize="16sp" />
+                            <TextView
+                                android:id="@+id/tvAutor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="Howard Anton"
+                                android:textSize="16sp"
+                                android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvAno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="2012"
+                                android:textSize="16sp"
+                                android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvIdLivro"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="ID: 123453"
+                                android:textSize="14sp"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
                     </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/livroDescricao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Álgebra Linear com Aplicações..."
+                        android:textSize="15sp"
+                        android:textColor="@android:color/black" />
+
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/livroDescricao"
-                    android:layout_width="362dp"
-                    android:layout_height="332dp"
-                    android:layout_marginTop="12dp"
-                    android:text="Álgebra Linear com Aplicações, 10.ed., apresenta os fundamentos da álgebra linear. O texto foi escrito de forma que não é necessário conhecimento de Cálculo para usar e entender o conteúdo; quando esse requisito for desejável, isso está destacado (esses exercícios e exemplos podem ser omitidos sem prejuízo à continuidade do aprendizado). Também não é exigido o uso de recursos computacionais, mas para aqueles que gostam de MATLAB, Maple, Mathematica ou calculadoras com funcionalidade para álgebra linear estão incluídos exercícios no final dos capítulos que permitem um aprofundamento usando tais ferramentas. O último capítulo cobre vinte aplicações de álgebra linear das mais diversas áreas: administração, economia, física, ciência da computação, ecologia, genética e outras. As aplicações são independentes e cada uma inclui uma lista de pré-requisitos matemáticos."
-                    android:textColor="#000000"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardQtds"
-            android:layout_width="387dp"
-            android:layout_height="75dp"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="10dp"
-            app:cardBackgroundColor="#B3D9FF"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardInfos">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardQtds"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="start"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#B3D9FF">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/qtdTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Quantidade Total:"
-                        android:textColor="#000000"
+                        android:text="Quantidade Total: 3"
                         android:textSize="16sp"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:id="@+id/tot"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:text="3"
-                        android:textColor="#000000"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="8dp" />
 
                     <TextView
                         android:id="@+id/qtdDisp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Quantidade Disponível:"
-                        android:textColor="#000000"
+                        android:text="Quantidade Disponível: 2"
                         android:textSize="16sp"
-                        android:textStyle="normal" />
+                        android:textColor="@android:color/black" />
 
-                    <TextView
-                        android:id="@+id/disp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:layout_weight="1"
-                        android:text="2"
-                        android:textColor="#000000"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
