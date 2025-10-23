@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Scientia"
         tools:targetApi="31">
         <activity
+            android:name=".TelaBarraFixa_User"
+            android:exported="false" />
+        <activity
             android:name=".TelaBarraFixa_Adm"
             android:exported="false" />
         <activity
