@@ -90,14 +90,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/capa" />
+                app:srcCompat="@drawable/capa2" />
 
             <ImageView
                 android:id="@+id/imageView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/capa" />
+                app:srcCompat="@drawable/capa2" />
         </LinearLayout>
 
     </LinearLayout>
