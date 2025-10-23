@@ -40,7 +40,7 @@ class TelaLogin_Adm : AppCompatActivity() {
         if(email.text.toString() == "oioioi@gmail.com" && senha.text.toString() == "1234"){
             val toastEntrar = Toast.makeText(this, "Entrada Autorizada", Toast.LENGTH_SHORT)
             toastEntrar.show()
-            val intencao = Intent(this, TelaHome_Adm::class.java)
+            val intencao = Intent(this, TelaBarraFixa_Adm::class.java)
             startActivity(intencao)
         } else if(email.text.isEmpty() || senha.text.isEmpty()){
             val toastCampoVazio = Toast.makeText(this, "Preencha Todos os Campos", Toast.LENGTH_SHORT)
