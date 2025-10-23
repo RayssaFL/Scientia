@@ -1,59 +1,58 @@
 package com.example.scientia
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.appbar.MaterialToolbar
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TelaListaUsuarios_Adm.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TelaListaUsuarios_Adm : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tela_lista_usuarios__adm, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TelaListaUsuarios_Adm.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TelaListaUsuarios_Adm().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val toolbar = view.findViewById<MaterialToolbar>(R.id.toolbarUsuarios)
+        toolbar.setNavigationOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+
+        val recycler = view.findViewById<RecyclerView>(R.id.recyclerUsuarios)
+        recycler.layoutManager = LinearLayoutManager(requireContext())
+
+        val listaUsuarios = listOf(
+            UsuarioDetalhes("Laura Rejane", "lrejane23@gmail.com", "1205468", 10),
+            UsuarioDetalhes("Carlos Silva", "carlos.silva@gmail.com", "1205469", 5),
+            UsuarioDetalhes("Maria Souza", "maria.souza@gmail.com", "1205470", 3),
+            UsuarioDetalhes("André Pereira", "andre.pereira@gmail.com", "1205471", 7)
+        )
+
+        recycler.adapter = UsuarioListaAdapter(listaUsuarios) { usuario ->
+            abrirPerfil(usuario)
+        }
+    }
+
+    private fun abrirPerfil(usuario: UsuarioDetalhes) {
+        val fragment = TelaPerfilUsuarios_Adm()
+        val bundle = Bundle()
+        bundle.putString("nome", usuario.nome)
+        bundle.putString("email", usuario.email)
+        bundle.putString("id", usuario.id)
+        bundle.putInt("quantidadeEmprestimos", usuario.quantidadeEmprestimos)
+        fragment.arguments = bundle
+
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.containerFrameLayout, fragment)
+            .addToBackStack("perfil_usuario")
+            .commit()
     }
 }

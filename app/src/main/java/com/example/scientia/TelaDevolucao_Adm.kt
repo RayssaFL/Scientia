@@ -38,9 +38,7 @@ class TelaDevolucao_Adm : Fragment() {
         }
         btn2.setOnClickListener {
             Toast.makeText(requireContext(), "Ação cancelada", Toast.LENGTH_SHORT).show()
-            val intencao = Intent(requireContext(), TelaHome_Adm::class.java)
-            startActivity(intencao)
-            requireActivity().finish()
+
         }
     }
     private fun validarCampos(){

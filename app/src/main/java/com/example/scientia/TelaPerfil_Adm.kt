@@ -28,5 +28,6 @@ class TelaPerfil_Adm : Fragment() {
         toolbar.setNavigationOnClickListener {
             parentFragmentManager.popBackStack() // volta ao fragment anterior
         }
+
     }
 }

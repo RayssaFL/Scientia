@@ -1,32 +1,67 @@
 package com.example.scientia
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
 
 class TelaEmpRealizados_Adm : Fragment() {
+
     private lateinit var btnVoltar: MaterialToolbar
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: LivroEmpAdmAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tela_emp_realizados__adm, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_tela_emp_realizados__adm, container, false)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         btnVoltar = view.findViewById(R.id.BarraNavegacaoLivrosEmpR)
+        recyclerView = view.findViewById(R.id.recyclerEmpRest)
 
         btnVoltar.setNavigationOnClickListener {
-            var intencao = Intent(requireContext(), TelaHome_Adm::class.java)
-            startActivity(intencao)
-            requireActivity().finish()
+            val fragmentHome = TelaHome_Adm()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.containerFrameLayout, fragmentHome)
+                .addToBackStack(null)
+                .commit()
         }
+        val listaLivrosEmp = listOf(
+            LivroEmp("Álgebra Linear", "Howard Anton", R.drawable.capa_computacao_nuvem, "Livro sobre vetores e matrizes", "2010",2535, 10, 2),
+            LivroEmp("Projetos de Banco de Dados", "Howard", R.drawable.capa, "Fantasia épica", "1954", 53453,4, 1),
+            LivroEmp("Clean Code", "Robert C. Martin", R.drawable.capa, "Boas práticas de programação", "2008", 335454,1, 0)
+        )
+        adapter = LivroEmpAdmAdapter(listaLivrosEmp){
+            livroSel -> abrirInfoLivro(livroSel)
+        }
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
+
+        return view
+    }
+    private fun abrirInfoLivro(livro: LivroEmp) {
+        val fragmentInfo = TelaInfoLivro_Adm()
+        val bundle = Bundle().apply {
+            putString("titulo", livro.titulo)
+            putString("autor", livro.autor)
+            putString("descricao", livro.descricao)
+            putString("ano", livro.ano)
+            putInt("id", livro.id)
+            putInt("capa", livro.capaResId)
+            putInt("quantidadeTotal", livro.quantidadeTotal)
+            putInt("quantidadeDisponivel", livro.quantidadeDisponivel)
+        }
+        fragmentInfo.arguments = bundle
+
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.containerFrameLayout, fragmentInfo)
+            .addToBackStack("info_livro")
+            .commit()
     }
 
 }

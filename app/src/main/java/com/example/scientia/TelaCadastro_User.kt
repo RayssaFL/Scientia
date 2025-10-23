@@ -1,20 +1,57 @@
 package com.example.scientia
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class TelaCadastro_User : AppCompatActivity() {
+
+    lateinit var email: EditText
+    lateinit var senha: EditText
+    lateinit var confirmarSenha: EditText
+    lateinit var btnCadastrar: Button
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_tela_cadastro_user)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        email = findViewById(R.id.emailCadastro)
+        senha = findViewById(R.id.SenhaCriar)
+        confirmarSenha = findViewById(R.id.SenhaConfirm)
+        btnCadastrar = findViewById(R.id.ButtonCriarConta)
+
+        btnCadastrar.setOnClickListener {
+            compararSenhas()
+        }
+    }
+
+    private fun compararSenhas() {
+        val senhaStr = senha.text.toString()
+        val confirmarStr = confirmarSenha.text.toString()
+
+        if (senhaStr.isEmpty() || confirmarStr.isEmpty()) {
+            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (senhaStr.length < 4) {
+            Toast.makeText(this, "A senha deve ter pelo menos 4 caracteres", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (senhaStr == confirmarStr) {
+            Toast.makeText(this, "Senhas coincidem! Cadastro concluído.", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, TelaMenu_User::class.java)
+            startActivity(intent)
+
+            finish()
+        } else {
+            Toast.makeText(this, "As senhas não coincidem!", Toast.LENGTH_SHORT).show()
         }
     }
 }
