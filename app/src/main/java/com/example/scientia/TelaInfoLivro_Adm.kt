@@ -68,7 +68,7 @@ class TelaInfoLivro_Adm : Fragment() {
             val qtdTotal = it.getInt("quantidadeTotal")
             val qtdDisp = it.getInt("quantidadeDisponivel")
 
-            // 🔹 Preencher na tela
+
             imgCapa.setImageResource(capa)
             txtTitulo.text = titulo
             txtAutor.text = autor
@@ -77,6 +77,8 @@ class TelaInfoLivro_Adm : Fragment() {
             txtID.text = "ID: $id"
             txtQtdTotal.text = "Total: $qtdTotal"
             txtQtdDisp.text = "Disponível: $qtdDisp"
+
+            btnVoltar.title = titulo
         }
     }
 

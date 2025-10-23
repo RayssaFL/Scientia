@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,19 +32,19 @@ class TelaEmpRealizados_Adm : Fragment() {
                 .commit()
         }
         val listaLivrosEmp = listOf(
-            Livro("Álgebra Linear", "Howard Anton", R.drawable.capa_computacao_nuvem, "Livro sobre vetores e matrizes", "2010",2535, 10, 2),
-            Livro("Projetos de Banco de Dados", "Howard", R.drawable.capa, "Fantasia épica", "1954", 53453,4, 1),
-            Livro("Clean Code", "Robert C. Martin", R.drawable.capa, "Boas práticas de programação", "2008", 335454,1, 0)
+            LivroEmp("Álgebra Linear", "Howard Anton", R.drawable.capa_computacao_nuvem, "Livro sobre vetores e matrizes", "2010",2535, 10, 2),
+            LivroEmp("Projetos de Banco de Dados", "Howard", R.drawable.capa, "Fantasia épica", "1954", 53453,4, 1),
+            LivroEmp("Clean Code", "Robert C. Martin", R.drawable.capa, "Boas práticas de programação", "2008", 335454,1, 0)
         )
         adapter = LivroEmpAdmAdapter(listaLivrosEmp){
-            livroSelecionado -> abrirInfoLivro(livroSelecionado)
+            livroSel -> abrirInfoLivro(livroSel)
         }
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 
         return view
     }
-    private fun abrirInfoLivro(livro: Livro) {
+    private fun abrirInfoLivro(livro: LivroEmp) {
         val fragmentInfo = TelaInfoLivro_Adm()
         val bundle = Bundle().apply {
             putString("titulo", livro.titulo)
