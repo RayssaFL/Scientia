@@ -34,6 +34,16 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <TextView
+                android:id="@+id/txtProximosEventos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Próximos Eventos:"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardEvento"
                 android:layout_width="match_parent"
