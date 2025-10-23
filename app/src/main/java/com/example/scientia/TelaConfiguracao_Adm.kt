@@ -8,6 +8,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.CompoundButton
+import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.Switch
 import android.widget.TextView
@@ -19,7 +20,7 @@ class TelaConfiguracao_Adm : Fragment() {
     private lateinit var btnBarranav: MaterialToolbar
     private lateinit var tema: Switch
     private lateinit var fonteSize: SeekBar
-    private lateinit var sair: TextView
+    private lateinit var sair: LinearLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +35,7 @@ class TelaConfiguracao_Adm : Fragment() {
         btnBarranav = view.findViewById(R.id.BarraNavegacaoConfigLivro)
         tema = view.findViewById(R.id.switchTema)
         fonteSize = view.findViewById(R.id.barraTamanhoFonte)
-        sair = view.findViewById(R.id.sairApp)
+        sair = view.findViewById(R.id.sairAdm)
 
         btnBarranav.setNavigationOnClickListener(object : OnClickListener {
             override fun onClick(v: View?) {

@@ -38,6 +38,7 @@ class TelaEmpAndamento_Adm : Fragment() {
                 R.drawable.capa_ciencia_computacao,
                 "Revista e atualizada com as últimas informações de campo, a quarta edição de Ciência da Computação apresenta a história do hardware e do software...",
                 "2018",
+                id = 34342,
                 quantidadeTotal = 5,
                 quantidadeDisponivel = 3
             ),
@@ -47,6 +48,7 @@ class TelaEmpAndamento_Adm : Fragment() {
                 R.drawable.capa_matematica_discreta,
                 "Esta obra aborda conceitos essenciais da matemática discreta...",
                 "2015",
+                id = 546564,
                 quantidadeTotal = 4,
                 quantidadeDisponivel = 1
             ),
@@ -56,6 +58,7 @@ class TelaEmpAndamento_Adm : Fragment() {
                 R.drawable.capa_computacao_nuvem,
                 "A computação em nuvem tornou-se parte integrante e fundamental da tecnologia da informação...",
                 "2020",
+                id = 757757,
                 quantidadeTotal = 3,
                 quantidadeDisponivel = 1
             )
