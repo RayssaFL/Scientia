@@ -104,7 +104,7 @@ class TelaInfoLivro_Adm : Fragment() {
 
 
     private fun voltarTelaTotalLivros() {
-        val fragment = TelaEmpRealizados_Adm()
+        val fragment = TelaTodosLivros_Adm()
         parentFragmentManager.beginTransaction()
             .replace(R.id.containerFrameLayout, fragment)
             .addToBackStack(null)

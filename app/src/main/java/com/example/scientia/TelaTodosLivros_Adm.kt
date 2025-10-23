@@ -115,7 +115,7 @@ class TelaTodosLivros_Adm : Fragment() {
     }
 
     private fun abrirDetalhesLivro(livro: Livro) {
-        val fragment = TelaInfoLivroAndamento_Adm()
+        val fragment = TelaInfoLivro_Adm()
         val bundle = Bundle()
         bundle.putString("titulo", livro.titulo)
         bundle.putString("autor", livro.autor)
