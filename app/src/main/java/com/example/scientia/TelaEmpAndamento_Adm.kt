@@ -31,54 +31,54 @@ class TelaEmpAndamento_Adm : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerLivros)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val listaLivros = listOf(
-            Livro(
+        val listaLivrosemp = listOf(
+            LivroEmp(
                 "Ciências da Computação",
                 "Nell Dale / John Lewis",
                 R.drawable.capa_ciencia_computacao,
                 "Revista e atualizada com as últimas informações de campo, a quarta edição de Ciência da Computação apresenta a história do hardware e do software, mostrando um sistema computacional como uma cebola. O computador, com sua linguagem de máquina, é o coração da cebola, e camadas de software e hardware mais sofisticados têm sido acrescentadas em volta desse coração, camada por camada. Primeiro, tem-se a linguagem de máquina, parte do centro desta cebola. A camada seguinte é composta de sofisticados sistemas de software, cujo desenvolvimento foi estimulado pelo trabalho teórico em ciência da computação – sem ela, esse programas não se tornariam realidade. A última camada compreende rede e software de rede – isto é, as ferramentas necessárias para que computadores se comuniquem uns com os outros. A internet e a World Wide Web (o famoso www dos endereços da internet) dão os retoques finais nessa camada. O primeiro e o último capítulos formam um par de \\\"bibliocantos\\\": o capítulo 1 descreve o que um sistema computacional é, e o capítulo 17 explica o que sistemas computacionais não podem fazer. Os capítulos intermediários analisam em profundidade as camadas que compõem um sistema computacional.",
                 "2018",
-                id = 34342,
-                quantidadeTotal = 5,
-                quantidadeDisponivel = 3
+                idE = 34342,
+                quantidadeTotalE = 5,
+                quantidadeDisponivelE = 3
             ),
-            Livro(
+            LivroEmp(
                 "Matemática Discreta",
                 "Clifford Sten",
                 R.drawable.capa_matematica_discreta,
                 "Esta obra aborda conceitos essenciais da matemática discreta, como árvores de recursão, teoria da probabilidade e indução forte e estrutural, bem como contagem, criptografa a e teoria dos números, grafos e reflexões sobre lógica e comprovação, oferecendo, assim, as bases necessárias para que o leitor possa desenvolver seu raciocínio matemático. Completo e compacto, o livro é voltado para estudantes de ciência da computação, sistemas de informação e análise e desenvolvimento de sistemas.",
                 "2015",
-                id = 546564,
-                quantidadeTotal = 4,
-                quantidadeDisponivel = 1
+                idE = 546564,
+                quantidadeTotalE = 4,
+                quantidadeDisponivelE = 1
             ),
-            Livro(
+            LivroEmp(
                 "Computação em Nuvem",
                 "Thomas Erl",
                 R.drawable.capa_computacao_nuvem,
                 "A computação em nuvem tornou-se parte integrante e fundamental da tecnologia da informação. A maior parte da atividade empresarial digital e da inovação tecnológica ocorre com o envolvimento de ambientes de nuvem contemporâneos que fornecem infraestrutura automatizada altamente sofisticada e uma vasta gama de recursos tecnológicos. Construir, interagir ou criar com sucesso um ambiente de nuvem requer uma compreensão de sua mecânica interna comum, camadas arquitetônicas, modelos e controles de segurança. Também requer uma compreensão dos fatores comerciais e econômicos que justificam a adoção e o uso no mundo real de nuvens e de produtos e serviços baseados em nuvem.",
                 "2020",
-                id = 757757,
-                quantidadeTotal = 3,
-                quantidadeDisponivel = 1
+                idE = 757757,
+                quantidadeTotalE = 3,
+                quantidadeDisponivelE = 1
             )
         )
 
-        recyclerView.adapter = LivroAdapter(listaLivros) { livro ->
+        recyclerView.adapter = LivroEmpAdmAdapter(listaLivrosemp) { livro ->
             abrirDetalhesLivro(livro)
         }
     }
 
-    private fun abrirDetalhesLivro(livro: Livro) {
+    private fun abrirDetalhesLivro(livro: LivroEmp) {
         val fragment = TelaInfoLivroAndamento_Adm().apply {
             arguments = Bundle().apply {
-                putString("titulo", livro.titulo)
-                putString("autor", livro.autor)
-                putString("descricao", livro.descricao)
-                putString("ano", livro.ano)
-                putInt("capa", livro.capaResId)
-                putInt("quantidadeTotal", livro.quantidadeTotal)
-                putInt("quantidadeDisponivel", livro.quantidadeDisponivel)
+                putString("titulo", livro.tituloE)
+                putString("autor", livro.autorE)
+                putString("descricao", livro.descricaoE)
+                putString("ano", livro.anoE)
+                putInt("capa", livro.capaResIdE)
+                putInt("quantidadeTotal", livro.quantidadeTotalE)
+                putInt("quantidadeDisponivel", livro.quantidadeDisponivelE)
             }
         }
 

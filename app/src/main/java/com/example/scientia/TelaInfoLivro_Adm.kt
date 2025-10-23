@@ -34,11 +34,11 @@ class TelaInfoLivro_Adm : Fragment() {
         val quantidadeTotal = arguments?.getInt("quantidadeTotal") ?: 0
         val quantidadeDisponivel = arguments?.getInt("quantidadeDisponivel") ?: 0
 
-        val tvNomeLivro = view.findViewById<TextView>(R.id.tvNomeLivro)
-        val tvAutor = view.findViewById<TextView>(R.id.tvAutor)
-        val tvAno = view.findViewById<TextView>(R.id.tvAno)
-        val tvIdLivro = view.findViewById<TextView>(R.id.tvIdLivro)
-        val livroDescricao = view.findViewById<TextView>(R.id.livroDescricao)
+        val tvNomeLivro = view.findViewById<TextView>(R.id.tvNomeLivroAber)
+        val tvAutor = view.findViewById<TextView>(R.id.tvAutorAber)
+        val tvAno = view.findViewById<TextView>(R.id.tvAnoAber)
+        val tvIdLivro = view.findViewById<TextView>(R.id.tvIdLivroAber)
+        val livroDescricao = view.findViewById<TextView>(R.id.livroDescricaoAber)
         val capaLivro = view.findViewById<ImageView>(R.id.capaLivro)
 
         val qtdTotal = view.findViewById<TextView>(R.id.qtdTotal)

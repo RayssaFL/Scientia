@@ -62,11 +62,11 @@
         app:layout_constraintBottom_toTopOf="@+id/user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/DataRetidaAber"
         app:cornerRadius="10dp"/>
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/DataRetidaAber"
         android:layout_width="258dp"
         android:layout_height="57dp"
         android:layout_marginStart="76dp"
