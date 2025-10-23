@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.content.Intent
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [TelaChat_User.newInstance] factory method to
+ * Use the [TelaContato_User.newInstance] factory method to
  * create an instance of this fragment.
  */
-class TelaChat_User : Fragment() {
+class TelaContato_User : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +35,20 @@ class TelaChat_User : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tela_chat_user, container, false)
+        return inflater.inflate(R.layout.fragment_tela_contato_user, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(
+            R.id.BarraNavegacaoContato
+        )
+
+        toolbar.setNavigationOnClickListener {
+            val intent = Intent(requireContext(), TelaMenu_User::class.java)
+            startActivity(intent)
+        }
     }
 
     companion object {
@@ -44,12 +58,12 @@ class TelaChat_User : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment TelaChat_User.
+         * @return A new instance of fragment TelaContato_User.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            TelaChat_User().apply {
+            TelaContato_User().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
