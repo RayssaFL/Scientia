@@ -22,9 +22,6 @@
             android:name=".TelaHistoricoLivros_User"
             android:exported="false" />
         <activity
-            android:name=".TelaDescLivro_User"
-            android:exported="false" />
-        <activity
             android:name=".TelaLivroBarraPesquisa_User"
             android:exported="false" />
         <activity
@@ -34,13 +31,7 @@
             android:name=".TelaDescEmpAberto_User"
             android:exported="false" />
         <activity
-            android:name=".TelaEmpAberto_User"
-            android:exported="false" />
-        <activity
             android:name=".TelaAvaliacoes_User"
-            android:exported="false" />
-        <activity
-            android:name=".TelaNotificacoes_User"
             android:exported="false" />
         <activity
             android:name=".TelaCadastro_User"
