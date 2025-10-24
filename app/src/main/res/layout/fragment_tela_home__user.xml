@@ -97,10 +97,10 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rvLivrosRecentes"
                             android:layout_width="match_parent"
-                            android:layout_height="180dp"
-                            android:overScrollMode="never"
+                            android:layout_height="250dp"
                             android:clipToPadding="false"
-                            android:paddingBottom="8dp"/>
+                            android:overScrollMode="never"
+                            android:paddingBottom="8dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -131,10 +131,10 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rvLivrosRecomendados"
                             android:layout_width="match_parent"
-                            android:layout_height="180dp"
-                            android:overScrollMode="never"
+                            android:layout_height="250dp"
                             android:clipToPadding="false"
-                            android:paddingBottom="8dp"/>
+                            android:overScrollMode="never"
+                            android:paddingBottom="8dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
