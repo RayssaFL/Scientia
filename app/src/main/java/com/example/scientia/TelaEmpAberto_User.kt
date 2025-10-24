@@ -1,20 +1,92 @@
 package com.example.scientia
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
-class TelaEmpAberto_User : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_tela_emp_aberto_user)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+class TelaEmpAberto_User : Fragment() {
+
+    private val CONTAINER_ID = R.id.containerFrameLayout
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_tela_emp_aberto__user, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbarLivrosAberto)
+        toolbar.setNavigationOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerLivrosAberto)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        val listaLivrosEmpAb = listOf(
+            LivroEmpAber_User(
+                "Ciências da Computação",
+                "Nell Dale / John Lewis",
+                R.drawable.capa_ciencia_computacao,
+                "Revista e atualizada com as últimas informações de campo, a quarta edição de Ciência da Computação apresenta a história do hardware e do software, mostrando um sistema computacional como uma cebola. O computador, com sua linguagem de máquina, é o coração da cebola, e camadas de software e hardware mais sofisticados têm sido acrescentadas em volta desse coração, camada por camada. Primeiro, tem-se a linguagem de máquina, parte do centro desta cebola. A camada seguinte é composta de sofisticados sistemas de software, cujo desenvolvimento foi estimulado pelo trabalho teórico em ciência da computação – sem ela, esse programas não se tornariam realidade. A última camada compreende rede e software de rede – isto é, as ferramentas necessárias para que computadores se comuniquem uns com os outros. A internet e a World Wide Web (o famoso www dos endereços da internet) dão os retoques finais nessa camada. O primeiro e o último capítulos formam um par de \\\"bibliocantos\\\": o capítulo 1 descreve o que um sistema computacional é, e o capítulo 17 explica o que sistemas computacionais não podem fazer. Os capítulos intermediários analisam em profundidade as camadas que compõem um sistema computacional.",
+                "2018",
+                idA = 34342,
+                quantidadeTotalA = 5,
+                quantidadeDisponivelA = 3
+            ),
+            LivroEmpAber_User(
+                "Matemática Discreta",
+                "Clifford Sten",
+                R.drawable.capa_matematica_discreta,
+                "Esta obra aborda conceitos essenciais da matemática discreta, como árvores de recursão, teoria da probabilidade e indução forte e estrutural, bem como contagem, criptografa a e teoria dos números, grafos e reflexões sobre lógica e comprovação, oferecendo, assim, as bases necessárias para que o leitor possa desenvolver seu raciocínio matemático. Completo e compacto, o livro é voltado para estudantes de ciência da computação, sistemas de informação e análise e desenvolvimento de sistemas.",
+                "2015",
+                idA = 546564,
+                quantidadeTotalA = 4,
+                quantidadeDisponivelA = 1
+            ),
+            LivroEmpAber_User(
+                "Computação em Nuvem",
+                "Thomas Erl",
+                R.drawable.capa_computacao_nuvem,
+                "A computação em nuvem tornou-se parte integrante e fundamental da tecnologia da informação. A maior parte da atividade empresarial digital e da inovação tecnológica ocorre com o envolvimento de ambientes de nuvem contemporâneos que fornecem infraestrutura automatizada altamente sofisticada e uma vasta gama de recursos tecnológicos. Construir, interagir ou criar com sucesso um ambiente de nuvem requer uma compreensão de sua mecânica interna comum, camadas arquitetônicas, modelos e controles de segurança. Também requer uma compreensão dos fatores comerciais e econômicos que justificam a adoção e o uso no mundo real de nuvens e de produtos e serviços baseados em nuvem.",
+                "2020",
+                idA = 757757,
+                quantidadeTotalA = 3,
+                quantidadeDisponivelA = 1
+            )
+        )
+
+        recyclerView.adapter = LivroEmpAbertoUserAdapter(listaLivrosEmpAb){
+            livro -> abrirDetalhesLivro(livro)
         }
     }
+
+    private fun abrirDetalhesLivro(livro: LivroEmpAber_User) {
+        val fragment = TelaDescEmpAberto_User().apply {
+            arguments = Bundle().apply {
+                putString("titulo", livro.tituloA)
+                putString("autor", livro.autorA)
+                putString("descricao", livro.descricaoA)
+                putString("ano", livro.anoA)
+                putInt("capa", livro.capaResIdA)
+                putInt("quantidadeTotal", livro.quantidadeTotalA)
+                putInt("quantidadeDisponivel", livro.quantidadeDisponivelA)
+            }
+        }
+
+        parentFragmentManager.beginTransaction()
+            .replace(CONTAINER_ID, fragment)
+            .addToBackStack("info_livro")
+            .commit()
+    }
+
 }

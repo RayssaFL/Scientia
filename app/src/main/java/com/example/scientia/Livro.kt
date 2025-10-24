@@ -6,6 +6,7 @@ data class Livro(
     val capaResId: Int,
     val descricao: String,
     val ano: String,
+    val id: Int,
     val quantidadeTotal: Int,
     val quantidadeDisponivel: Int
 )
