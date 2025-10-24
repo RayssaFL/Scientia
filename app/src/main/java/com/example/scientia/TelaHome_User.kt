@@ -61,7 +61,7 @@ class TelaHome_User : Fragment() {
         navigationView.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_hist_livros -> parentFragmentManager.beginTransaction()
-                    .replace(R.id.containerFrameLayout, TelaHistoricoLivros_User())
+                    .replace(R.id.containerFrameLayout, TelaHistoricoLivro_User())
                     .addToBackStack(null).commit()
                 R.id.nav_autores -> parentFragmentManager.beginTransaction()
                     .replace(R.id.containerFrameLayout, TelaAutores_User())
