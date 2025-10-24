@@ -24,11 +24,11 @@ class TelaEditarEvento_Adm : Fragment() {
         btnSalvar = view.findViewById(R.id.btnSalvarEvt)
 
         btnSalvar.setOnClickListener {
-            Toast.makeText(requireContext(), "Edição Salva Com Sucesso!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Edição Salva Com Sucesso! ", Toast.LENGTH_SHORT).show()
         }
 
         btnCancelar.setOnClickListener {
-            Toast.makeText(requireContext(), "Edição Cancelada", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Edição Cancelada ", Toast.LENGTH_SHORT).show()
         }
 
         return view
