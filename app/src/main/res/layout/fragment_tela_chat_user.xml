@@ -8,47 +8,69 @@
     android:background="@color/white"
     tools:context=".TelaChat_User">
 
+    <!-- Top App Bar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/barraNavegacaoChatBot"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/CorPadrao"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_arrow_back"
         app:title="Chat IA"
         app:titleCentered="true"
-        app:titleTextColor="@color/white" />
+        app:titleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- RecyclerView for chat messages -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewChat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/barraNavegacaoChatBot"
+        app:layout_constraintBottom_toTopOf="@id/cardInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Bottom input area -->
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardInput"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/AzulClaroFundo"
+        android:layout_margin="8dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/AzulClaroFundo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
 
             <EditText
                 android:id="@+id/editTextText"
-                android:layout_width="340dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/search_background"
-                android:ems="10"
+                android:layout_weight="1"
                 android:hint="Digite aqui..."
+                android:background="@drawable/search_background"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="#888888"
                 android:inputType="text" />
+
+            <Button
+                android:id="@+id/buttonSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enviar"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/CorPadrao" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
