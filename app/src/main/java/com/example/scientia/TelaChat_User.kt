@@ -25,6 +25,15 @@ class TelaChat_User : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(
+            R.id.barraNavegacaoChatBot
+        )
+
+        toolbar.setNavigationOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+
+
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewChat)
         val editText = view.findViewById<EditText>(R.id.editTextText)
         val buttonSend = view.findViewById<Button>(R.id.buttonSend)
