@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_hist_livros"
+        android:title="Histórico de Livros" />
+
+    <item
+        android:id="@+id/nav_autores"
+        android:title="Autores" />
+
+    <item
+        android:id="@+id/nav_emp_abertos"
+        android:title="Empréstimos em Aberto" />
+
+    <item
+        android:id="@+id/nav_avaliacoes"
+        android:title="Avaliações" />
+
+    <item
+        android:id="@+id/nav_config"
+        android:title="Configurações" />
+
+</menu>
