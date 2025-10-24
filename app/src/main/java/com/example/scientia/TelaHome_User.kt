@@ -23,7 +23,7 @@ class TelaHome_User : Fragment() {
     private lateinit var toolbar: Toolbar
     private lateinit var searchBar: LinearLayout
     private lateinit var btnNotificacao: ImageButton
-    private lateinit var btnChatFlutuante: FloatingActionButton  // novo botão
+    private lateinit var btnChatFlutuante: FloatingActionButton
 
     private lateinit var rvRecentes: RecyclerView
     private lateinit var rvRecomendados: RecyclerView
@@ -41,7 +41,7 @@ class TelaHome_User : Fragment() {
         toolbar = v.findViewById(R.id.toolbarUser)
         searchBar = v.findViewById(R.id.searchBarUser)
         btnNotificacao = v.findViewById(R.id.btnNotificacao)
-        btnChatFlutuante = v.findViewById(R.id.btnChatFlutuante)  // vincula botão
+        btnChatFlutuante = v.findViewById(R.id.btnChatFlutuante)
 
         rvRecentes = v.findViewById(R.id.rvLivrosRecentes)
         rvRecomendados = v.findViewById(R.id.rvLivrosRecomendados)
@@ -54,19 +54,16 @@ class TelaHome_User : Fragment() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        // Clique do botão de notificação
         btnNotificacao.setOnClickListener {
             abrirFragment(TelaNotificacoes_User())
         }
 
-        // Clique da barra de pesquisa
         searchBar.setOnClickListener {
             abrirFragment(TelaLivroBarraPesquisa_User())
         }
 
-        // Clique do botão flutuante de chat
         btnChatFlutuante.setOnClickListener {
-            abrirFragment(TelaChat_User())  // novo fragment de chat
+            abrirFragment(TelaChat_User())
         }
 
         navigationView.setNavigationItemSelectedListener { item ->
