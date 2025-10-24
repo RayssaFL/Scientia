@@ -50,7 +50,7 @@ class TelaEventos_Adm : Fragment() {
         val cardAdicionar = view.findViewById<CardView>(R.id.cardAdicionarEvento)
         cardAdicionar.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(CONTAINER_ID, TelaPerfil_Adm())
+                .replace(CONTAINER_ID, TelaAdicionarEvento_Adm())
                 .addToBackStack("adicionar_evento")
                 .commit()
         }
@@ -58,7 +58,7 @@ class TelaEventos_Adm : Fragment() {
         val btnAdd = view.findViewById<ImageButton>(R.id.btnAdd)
         btnAdd.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(CONTAINER_ID, TelaPerfil_Adm())
+                .replace(CONTAINER_ID, TelaAdicionarEvento_Adm())
                 .addToBackStack("adicionar_evento")
                 .commit()
         }
@@ -85,7 +85,7 @@ class TelaEventos_Adm : Fragment() {
                 when (item.itemId) {
                     R.id.menu_editar -> {
                         parentFragmentManager.beginTransaction()
-                            .replace(CONTAINER_ID, TelaEmpAndamento_Adm())
+                            .replace(CONTAINER_ID, TelaEditarEvento_Adm())
                             .addToBackStack("editar_evento")
                             .commit()
                         true

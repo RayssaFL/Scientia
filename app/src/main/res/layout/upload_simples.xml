@@ -17,11 +17,12 @@
         android:layout_marginBottom="16dp" />
 
     <LinearLayout
+        android:id="@+id/uploadImagem"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/upload_area"
-        android:gravity="center"
-        android:layout_marginBottom="20dp">
+        android:gravity="center">
 
         <ImageView
             android:layout_width="60dp"
