@@ -47,14 +47,14 @@ class TelaEmpRealizados_Adm : Fragment() {
     private fun abrirInfoLivro(livro: LivroEmp) {
         val fragmentInfo = TelaInfoLivro_Adm()
         val bundle = Bundle().apply {
-            putString("titulo", livro.titulo)
-            putString("autor", livro.autor)
-            putString("descricao", livro.descricao)
-            putString("ano", livro.ano)
-            putInt("id", livro.id)
-            putInt("capa", livro.capaResId)
-            putInt("quantidadeTotal", livro.quantidadeTotal)
-            putInt("quantidadeDisponivel", livro.quantidadeDisponivel)
+            putString("titulo", livro.tituloE)
+            putString("autor", livro.autorE)
+            putString("descricao", livro.descricaoE)
+            putString("ano", livro.anoE)
+            putInt("id", livro.idE)
+            putInt("capa", livro.capaResIdE)
+            putInt("quantidadeTotal", livro.quantidadeTotalE)
+            putInt("quantidadeDisponivel", livro.quantidadeDisponivelE)
         }
         fragmentInfo.arguments = bundle
 
