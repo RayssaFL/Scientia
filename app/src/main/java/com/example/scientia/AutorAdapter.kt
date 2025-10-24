@@ -22,7 +22,7 @@ class AutorAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AutorViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_livro, parent, false)
+            .inflate(R.layout.item_autores_lista, parent, false)
         return AutorViewHolder(view)
     }
 
