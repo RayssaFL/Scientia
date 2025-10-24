@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.content.Intent
+import androidx.appcompat.widget.Toolbar
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,13 +41,9 @@ class TelaContato_User : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(
-            R.id.BarraNavegacaoContato
-        )
-
+        val toolbar = view.findViewById<Toolbar>(R.id.BarraNavegacaoContato)
         toolbar.setNavigationOnClickListener {
-            val intent = Intent(requireContext(), TelaMenu_User::class.java)
-            startActivity(intent)
+            parentFragmentManager.popBackStack()
         }
     }
 

@@ -40,7 +40,7 @@ class TelaCadastro_User : AppCompatActivity() {
         }
 
         if (senhaStr.length < 6) {
-            Toast.makeText(this, "A senha deve ter pelo menos 6 caracteres", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "A senha deve ter pelo menos 6 caracteres e conter ao menos uma letra e um número", Toast.LENGTH_SHORT).show()
             return
         }
 

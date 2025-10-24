@@ -24,7 +24,7 @@ class TelaEmpAberto_User : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val toolbar = view.findViewById<Toolbar>(R.id.toolbarLivrosAberto)
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbarLivroAberto)
         toolbar.setNavigationOnClickListener {
             parentFragmentManager.popBackStack()
         }

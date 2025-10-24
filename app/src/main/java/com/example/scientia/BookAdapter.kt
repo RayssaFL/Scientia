@@ -34,13 +34,11 @@ class BookAdapter(private val fragment: Fragment) :
     }
 
     inner class BookVH(v: View) : RecyclerView.ViewHolder(v) {
-        private val title: TextView = v.findViewById(R.id.tvTitulo)
         private val image: ImageView = v.findViewById(R.id.imgCapa)
         private val btnInfo: ImageButton = v.findViewById(R.id.btnInfo)
         private val btnMenu: ImageButton = v.findViewById(R.id.btnMenu)
 
         fun bind(item: BookFull) {
-            title.text = item.title
             image.setImageResource(item.coverResId)
 
             itemView.setOnClickListener {

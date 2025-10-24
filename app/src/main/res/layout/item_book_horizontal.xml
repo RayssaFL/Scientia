@@ -40,26 +40,14 @@
                 android:contentDescription="Informações"
                 android:tint="@android:color/black" />
 
-            <TextView
-                android:id="@+id/tvTitulo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Título do Livro"
-                android:textColor="#111111"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:maxLines="1"
-                android:ellipsize="end" />
-
             <ImageButton
                 android:id="@+id/btnMenu"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:layout_marginStart="70dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_more_vert"
                 android:contentDescription="Menu"
+                android:src="@drawable/ic_more_vert"
                 android:tint="@android:color/black" />
         </LinearLayout>
 
