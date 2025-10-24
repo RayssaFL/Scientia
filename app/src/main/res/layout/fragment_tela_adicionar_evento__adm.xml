@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".TelaEditarEvento_Adm">
+    tools:context=".TelaAdicionarEvento_Adm">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/BarraNavegacaoEditarEvento"
+            android:id="@+id/BarraNavegacaoAdicionarEvento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#241B61"
@@ -20,15 +20,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:title="Editar Evento"
+            app:title="Adicionar Evento"
             app:titleCentered="true"
             app:titleTextColor="@android:color/white" />
 
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
-            app:layout_constraintTop_toBottomOf="@id/BarraNavegacaoEditarEvento">
+            android:layout_width="411dp"
+            android:layout_height="760dp"
+            app:layout_constraintTop_toBottomOf="@+id/BarraNavegacaoAdicionarEvento"
+            tools:layout_editor_absoluteX="-7dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -51,7 +51,6 @@
                         android:padding="12dp">
 
                         <TextView
-                            android:id="@+id/idLivroDev"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Título:"
@@ -60,12 +59,12 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/editTextIdLiv"
+                            android:id="@+id/editTextIdTitulo"
                             android:layout_width="350dp"
                             android:layout_height="50dp"
-                            android:background="@color/white"
-                            android:hint="Leitura Guiada dos clássicos de Machado de Assis"
-                            android:inputType="number"
+                            android:background="#FFFFFF"
+                            android:ems="10"
+                            android:inputType="text"
                             android:padding="8dp" />
 
                     </LinearLayout>
@@ -93,13 +92,15 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/editTextIdUsuario"
+                            android:id="@+id/editTextDescricao"
                             android:layout_width="350dp"
                             android:layout_height="50dp"
-                            android:background="@color/white"
-                            android:hint="Realização de uma leitura guiada em grupo."
-                            android:inputType="number"
+                            android:background="#FFFFFF"
+                            android:ems="10"
+                            android:hint="Insira a descrição do evento aqui."
+                            android:inputType="text"
                             android:padding="8dp" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -125,13 +126,14 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/editTextIdUsuario"
+                            android:id="@+id/editTextMediadores"
                             android:layout_width="350dp"
                             android:layout_height="50dp"
-                            android:background="@color/white"
-                            android:hint="Rachel de Queiroz"
-                            android:inputType="number"
+                            android:background="#FFFFFF"
+                            android:ems="10"
+                            android:inputType="text"
                             android:padding="8dp" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -144,22 +146,21 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
                         android:padding="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
-                            android:text="Data de Devolução:"
+                            android:text="Definir Data:"
                             android:textColor="#212121"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/editTextDataDevolucao"
+                            android:id="@+id/editTextDefinirData"
                             android:layout_width="200dp"
                             android:layout_height="50dp"
                             android:layout_weight="1"
@@ -168,7 +169,12 @@
                             android:inputType="date"
                             android:padding="6dp" />
 
+                        <CalendarView
+                            android:id="@+id/calendarView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -179,31 +185,28 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
                         android:padding="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
-                            android:text="Horário:"
+                            android:text="Definir Horário:"
                             android:textColor="#212121"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/editTextDataDevolucao"
-                            android:layout_width="200dp"
-                            android:layout_height="50dp"
-                            android:layout_weight="1"
-                            android:background="@color/white"
-                            android:hint="14:00h"
-                            android:inputType="date"
-                            android:padding="6dp" />
+                        <TimePicker
+                            android:id="@+id/timePicker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:timePickerMode="spinner"
+                            android:layout_gravity="center_horizontal" />
 
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
@@ -234,21 +237,6 @@
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#241B61"
-            app:itemIconTint="@color/nav_item_color"
-            app:itemTextColor="@color/nav_item_color"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_nav_menu">
-
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

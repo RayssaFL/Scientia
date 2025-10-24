@@ -27,7 +27,7 @@ class TelaDevolucao_Adm : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        idLivro = view.findViewById(R.id.editTextIdLiv)
+        idLivro = view.findViewById(R.id.editTextIdLivro)
         idUser = view.findViewById(R.id.editTextIdUsuario)
         dataDev = view.findViewById(R.id.editTextDataDevolucao)
         btn1 = view.findViewById(R.id.btnSalvarDev)

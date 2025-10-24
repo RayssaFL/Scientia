@@ -27,7 +27,7 @@ class TelaInfoLivro_Adm : Fragment() {
         toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.action_editar -> {
-                    //irTelaEditarLivro()
+                    irTelaEditarLivro()
                     true
                 }
                 R.id.action_deletar -> {
@@ -90,13 +90,12 @@ class TelaInfoLivro_Adm : Fragment() {
         parentFragmentManager.popBackStack()
     }
 
-//    private fun irTelaEditarLivro() {
-//        val fragmentEditar = TelaEditarInfoLivro_Adm()
-//
-//        parentFragmentManager.beginTransaction()
-//            .replace(R.id.containerFrameLayout, fragmentEditar)
-//            .addToBackStack("editar_livro")
-//            .commit()
-//    }
-}
+    private fun irTelaEditarLivro() {
+        val fragmentEditar = TelaEditarInfoLivro_Adm()
 
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.containerFrameLayout, fragmentEditar)
+            .addToBackStack("editar_livro")
+            .commit()
+    }
+}

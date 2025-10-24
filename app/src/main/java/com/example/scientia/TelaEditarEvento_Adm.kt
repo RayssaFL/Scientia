@@ -1,36 +1,36 @@
 package com.example.scientia
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
-class TelaEditarEvento_Adm : AppCompatActivity() {
+class TelaEditarEvento_Adm : Fragment() {
 
-    lateinit var btnCancelar: Button
-    lateinit var btnSalvar: Button
+    private lateinit var btnCancelar: Button
+    private lateinit var btnSalvar: Button
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_tela_editar_evento_adm)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_tela_editar_evento__adm, container, false)
 
-        btnCancelar = findViewById(R.id.btnCancelarEvt)
-        btnSalvar = findViewById(R.id.btnSalvarEvt)
-
-    }
-
-    override fun onStart() {
-        super.onStart()
+        btnCancelar = view.findViewById(R.id.btnCancelarEvt)
+        btnSalvar = view.findViewById(R.id.btnSalvarEvt)
 
         btnSalvar.setOnClickListener {
-            Toast.makeText(this, "Edição Salva Com Sucesso!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Edição Salva Com Sucesso!", Toast.LENGTH_SHORT).show()
         }
 
         btnCancelar.setOnClickListener {
-            Toast.makeText(this, "Edição Cancelada", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Edição Cancelada", Toast.LENGTH_SHORT).show()
         }
 
+        return view
     }
 }
