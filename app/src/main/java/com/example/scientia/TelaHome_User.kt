@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 
 class TelaHome_User : Fragment() {
@@ -22,6 +23,7 @@ class TelaHome_User : Fragment() {
     private lateinit var toolbar: Toolbar
     private lateinit var searchBar: LinearLayout
     private lateinit var btnNotificacao: ImageButton
+    private lateinit var btnChatFlutuante: FloatingActionButton  // novo botão
 
     private lateinit var rvRecentes: RecyclerView
     private lateinit var rvRecomendados: RecyclerView
@@ -39,6 +41,7 @@ class TelaHome_User : Fragment() {
         toolbar = v.findViewById(R.id.toolbarUser)
         searchBar = v.findViewById(R.id.searchBarUser)
         btnNotificacao = v.findViewById(R.id.btnNotificacao)
+        btnChatFlutuante = v.findViewById(R.id.btnChatFlutuante)  // vincula botão
 
         rvRecentes = v.findViewById(R.id.rvLivrosRecentes)
         rvRecomendados = v.findViewById(R.id.rvLivrosRecomendados)
@@ -51,18 +54,19 @@ class TelaHome_User : Fragment() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
+        // Clique do botão de notificação
         btnNotificacao.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.containerFrameLayout, TelaNotificacoes_User())
-                .addToBackStack(null)
-                .commit()
+            abrirFragment(TelaNotificacoes_User())
         }
 
+        // Clique da barra de pesquisa
         searchBar.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.containerFrameLayout, TelaLivroBarraPesquisa_User())
-                .addToBackStack(null)
-                .commit()
+            abrirFragment(TelaLivroBarraPesquisa_User())
+        }
+
+        // Clique do botão flutuante de chat
+        btnChatFlutuante.setOnClickListener {
+            abrirFragment(TelaChat_User())  // novo fragment de chat
         }
 
         navigationView.setNavigationItemSelectedListener { item ->
