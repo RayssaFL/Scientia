@@ -43,10 +43,8 @@ class TelaContato_User : Fragment() {
         val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(
             R.id.BarraNavegacaoContato
         )
-
         toolbar.setNavigationOnClickListener {
-            val intent = Intent(requireContext(), TelaMenu_User::class.java)
-            startActivity(intent)
+            parentFragmentManager.popBackStack()
         }
     }
 

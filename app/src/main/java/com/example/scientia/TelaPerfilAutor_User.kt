@@ -47,8 +47,7 @@ class TelaPerfilAutor_User : Fragment() {
         )
 
         toolbar.setNavigationOnClickListener {
-            val intent = Intent(requireContext(), TelaHome_User::class.java)
-            startActivity(intent)
+            parentFragmentManager.popBackStack()
         }
     }
 
