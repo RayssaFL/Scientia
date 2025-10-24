@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
     tools:context=".TelaNotificacoes_User">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/BarraNavegacaoNotificacoLivro_User"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#241B61"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Notificações"
+        app:titleCentered="true"
+        app:titleTextColor="@android:color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notificacoes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:clipToPadding="false"
+        android:padding="16dp" />
 
-</FrameLayout>
+</LinearLayout>

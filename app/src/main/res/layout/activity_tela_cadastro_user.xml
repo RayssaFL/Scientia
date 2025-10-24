@@ -52,7 +52,7 @@
             android:padding="70dp">
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/DataDevAber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20sp"

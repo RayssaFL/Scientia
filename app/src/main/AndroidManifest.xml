@@ -22,21 +22,6 @@
             android:name=".TelaDescLivroAvaliacoes_User"
             android:exported="false" />
         <activity
-            android:name=".TelaHistoricoLivros_User"
-            android:exported="false" />
-        <activity
-            android:name=".TelaLivroBarraPesquisa_User"
-            android:exported="false" />
-        <activity
-            android:name=".TelaChat_User"
-            android:exported="false" />
-        <activity
-            android:name=".TelaDescEmpAberto_User"
-            android:exported="false" />
-        <activity
-            android:name=".TelaAvaliacoes_User"
-            android:exported="false" />
-        <activity
             android:name=".TelaCadastro_User"
             android:exported="false" />
         <activity
@@ -53,15 +38,6 @@
             android:exported="false" />
         <activity
             android:name=".TelaMenu_User"
-            android:exported="true" />
-        <activity
-            android:name=".TelaVisualizarEventos_User"
-            android:exported="true" />
-        <activity
-            android:name=".TelaEventos_User"
-            android:exported="true" />
-        <activity
-            android:name=".TelaPerfil_User"
             android:exported="true" />
         <activity
             android:name=".TelaAdicionarEvento_Adm"

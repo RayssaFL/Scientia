@@ -27,9 +27,9 @@ class LivroEmpAdmAdapter(
 
     override fun onBindViewHolder(holder: LivroEmpViewHolder, position: Int) {
         val livroemp = listaLivrosEmp[position]
-        holder.imagemCapa.setImageResource(livroemp.capaResId)
-        holder.titulo.text = livroemp.titulo
-        holder.autor.text = livroemp.autor
+        holder.imagemCapa.setImageResource(livroemp.capaResIdE)
+        holder.titulo.text = livroemp.tituloE
+        holder.autor.text = livroemp.autorE
         holder.cardItem.setOnClickListener { onLivroClick(livroemp) }
     }
 
