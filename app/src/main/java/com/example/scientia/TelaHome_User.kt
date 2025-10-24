@@ -51,6 +51,16 @@ class TelaHome_User : Fragment() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
+        val btnChat = v.findViewById<ImageButton>(R.id.floatingActionButton)
+
+        btnChat.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.containerFrameLayout, TelaChat_User())
+                .addToBackStack(null)
+                .commit()
+        }
+
+
         btnNotificacao.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.containerFrameLayout, TelaEventos_User())
@@ -73,7 +83,7 @@ class TelaHome_User : Fragment() {
                     .replace(R.id.containerFrameLayout, TelaAvaliacoes_User())
                     .addToBackStack(null).commit()
                 R.id.nav_config -> parentFragmentManager.beginTransaction()
-                    .replace(R.id.containerFrameLayout, TelaConfiguracao_User())
+                    .replace(R.id.containerFrameLayout, TelaChat_User())
                     .addToBackStack(null).commit()
             }
             drawerLayout.closeDrawers()

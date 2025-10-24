@@ -45,7 +45,6 @@ class TelaPerfilAutor_User : Fragment() {
         val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(
             R.id.BarraNavegacaoPerfilAutor
         )
-
         toolbar.setNavigationOnClickListener {
             parentFragmentManager.popBackStack()
         }
