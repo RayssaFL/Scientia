@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -20,7 +20,7 @@ class TelaHome_User : Fragment() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
     private lateinit var toolbar: Toolbar
-    private lateinit var searchBar: EditText
+    private lateinit var searchBar: LinearLayout
     private lateinit var btnNotificacao: ImageButton
 
     private lateinit var rvRecentes: RecyclerView
@@ -58,23 +58,20 @@ class TelaHome_User : Fragment() {
                 .commit()
         }
 
+        searchBar.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.containerFrameLayout, TelaLivroBarraPesquisa_User())
+                .addToBackStack(null)
+                .commit()
+        }
+
         navigationView.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_hist_livros -> parentFragmentManager.beginTransaction()
-                    .replace(R.id.containerFrameLayout, TelaHistoricoLivro_User())
-                    .addToBackStack(null).commit()
-                R.id.nav_autores -> parentFragmentManager.beginTransaction()
-                    .replace(R.id.containerFrameLayout, TelaAutores_User())
-                    .addToBackStack(null).commit()
-                R.id.nav_emp_abertos -> parentFragmentManager.beginTransaction()
-                    .replace(R.id.containerFrameLayout, TelaEmpAberto_User())
-                    .addToBackStack(null).commit()
-                R.id.nav_avaliacoes -> parentFragmentManager.beginTransaction()
-                    .replace(R.id.containerFrameLayout, TelaAvaliacoes_User())
-                    .addToBackStack(null).commit()
-                R.id.nav_config -> parentFragmentManager.beginTransaction()
-                    .replace(R.id.containerFrameLayout, TelaConfiguracao_User())
-                    .addToBackStack(null).commit()
+                R.id.nav_hist_livros -> abrirFragment(TelaHistoricoLivro_User())
+                R.id.nav_autores -> abrirFragment(TelaAutores_User())
+                R.id.nav_emp_abertos -> abrirFragment(TelaEmpAberto_User())
+                R.id.nav_avaliacoes -> abrirFragment(TelaAvaliacoes_User())
+                R.id.nav_config -> abrirFragment(TelaConfiguracao_User())
             }
             drawerLayout.closeDrawers()
             true
@@ -89,6 +86,13 @@ class TelaHome_User : Fragment() {
         recomendadosAdapter.submitList(mockRecomendados())
 
         return v
+    }
+
+    private fun abrirFragment(fragment: Fragment) {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.containerFrameLayout, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun setupHorizontalRecycler(rv: RecyclerView, adapter: BookAdapter) {

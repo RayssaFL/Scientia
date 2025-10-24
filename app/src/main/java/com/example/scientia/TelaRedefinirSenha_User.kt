@@ -25,17 +25,12 @@ class TelaRedefinirSenha_User : AppCompatActivity() {
         email = findViewById(R.id.emailBuscaUser)
         btnrs = findViewById(R.id.buttonRedSenhaUser)
         btnV = findViewById(R.id.bottonVoltar)
-
     }
 
     override fun onStart() {
         super.onStart()
-        btnrs.setOnClickListener {
-            validarEmail()
-        }
-        btnV.setOnClickListener {
-            voltar()
-        }
+        btnrs.setOnClickListener { validarEmail() }
+        btnV.setOnClickListener { voltar() }
     }
 
     private fun validarEmail() {
@@ -43,11 +38,9 @@ class TelaRedefinirSenha_User : AppCompatActivity() {
 
         if (emailTexto.isEmpty()) {
             Toast.makeText(this, "Preencha o campo", Toast.LENGTH_SHORT).show()
-        }
-        else if (emailTexto == "oioioi@gmail.com") {
+        } else if (emailTexto == "123@gmail.com") {
             mostrarPopupLinkEnviado()
-        }
-        else {
+        } else {
             Toast.makeText(this, "E-mail Inválido", Toast.LENGTH_SHORT).show()
         }
     }
@@ -64,8 +57,10 @@ class TelaRedefinirSenha_User : AppCompatActivity() {
             }
             .show()
     }
-    private fun voltar(){
-        var arrowback = Intent(this, TelaLogin_User::class.java)
+
+    private fun voltar() {
+        val arrowback = Intent(this, TelaLogin_User::class.java)
         startActivity(arrowback)
+        finish()
     }
 }

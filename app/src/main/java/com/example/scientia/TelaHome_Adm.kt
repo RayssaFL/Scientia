@@ -65,42 +65,36 @@ class TelaHome_Adm : Fragment() {
                         .addToBackStack(null)
                         .commit()
                 }
-
                 R.id.nav_realizado -> {
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.containerFrameLayout, TelaEmpRealizados_Adm())
                         .addToBackStack(null)
                         .commit()
                 }
-
                 R.id.nav_adicionar_livro -> {
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.containerFrameLayout, TelaAdicionarLivro_Adm())
                         .addToBackStack(null)
                         .commit()
                 }
-
                 R.id.nav_autorizar_emprestimo -> {
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.containerFrameLayout, TelaAutorizarEmp_Adm())
                         .addToBackStack(null)
                         .commit()
                 }
-
                 R.id.nav_devolucao_livro -> {
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.containerFrameLayout, TelaDevolucao_Adm())
                         .addToBackStack(null)
                         .commit()
                 }
-
                 R.id.nav_users -> {
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.containerFrameLayout, TelaListaUsuarios_Adm())
                         .addToBackStack(null)
                         .commit()
                 }
-
                 R.id.nav_settings -> {
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.containerFrameLayout, TelaConfiguracao_Adm())
@@ -122,6 +116,13 @@ class TelaHome_Adm : Fragment() {
         cardLivEmp.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.containerFrameLayout, TelaEmpAndamento_Adm())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        searchBar.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.containerFrameLayout, TelaTodosLivros_Adm())
                 .addToBackStack(null)
                 .commit()
         }

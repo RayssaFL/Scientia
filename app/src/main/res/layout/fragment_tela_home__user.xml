@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
+                <LinearLayout
                     android:id="@+id/searchBarUser"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
@@ -34,11 +34,18 @@
                     android:layout_marginBottom="12dp"
                     android:layout_toStartOf="@id/btnNotificacao"
                     android:background="@drawable/search_background"
-                    android:drawableRight="@android:drawable/ic_menu_search"
-                    android:hint="Informe o nome do livro..."
-                    android:padding="8dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#7A7A7A"/>
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Informe o nome do livro..."
+                        android:textColor="#7A7A7A"/>
+                </LinearLayout>
 
                 <ImageButton
                     android:id="@+id/btnNotificacao"
