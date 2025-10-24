@@ -43,7 +43,7 @@ class TelaPerfilAutor_User : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(
-            R.id.barraNavegacaoDescEmpRealizados
+            R.id.BarraNavegacaoPerfilAutor
         )
 
         toolbar.setNavigationOnClickListener {

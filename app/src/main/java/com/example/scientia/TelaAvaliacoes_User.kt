@@ -69,7 +69,7 @@ class TelaAvaliacoes_User : Fragment() {
     }
 
     private fun abrirDetalhesLivro(livro: LivroAvaliacoes) {
-        val fragment = TelaInfoLivroAndamento_Adm().apply {
+        val fragment = TelaDescLivroAvaliacoes_User().apply {
             arguments = Bundle().apply {
                 putString("titulo", livro.tituloAv)
                 putString("autor", livro.autorAv)

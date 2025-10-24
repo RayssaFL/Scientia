@@ -104,7 +104,7 @@ class TelaConfiguracao_User : Fragment() {
 
     private fun sairDaContaUser() {
         Toast.makeText(context, "Saindo da conta", Toast.LENGTH_SHORT).show()
-        val intencao = Intent(requireContext(), TelaLogin_Adm::class.java)
+        val intencao = Intent(requireContext(), TelaInicialDiv::class.java)
         startActivity(intencao)
         requireActivity().finish()
     }

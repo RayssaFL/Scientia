@@ -30,8 +30,7 @@ class TelaDescEmpAberto_User : Fragment() {
         )
 
         toolbar.setNavigationOnClickListener {
-            val intent = Intent(requireContext(), TelaHome_User::class.java)
-            startActivity(intent)
+            parentFragmentManager.popBackStack()
         }
 
         val stars = listOf(

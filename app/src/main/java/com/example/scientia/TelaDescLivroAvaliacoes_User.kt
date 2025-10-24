@@ -1,5 +1,6 @@
 package com.example.scientia
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,6 +41,15 @@ class TelaDescLivroAvaliacoes_User : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(
+            R.id.barraNavegacaoDescAvaliacoes
+        )
+
+        toolbar.setNavigationOnClickListener {
+            val intent = Intent(requireContext(), TelaHome_User::class.java)
+            startActivity(intent)
+        }
 
         val rating = 3
 
