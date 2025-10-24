@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Barra superior -->
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/BarraNavegaçãoInfoLivro"
             android:layout_width="match_parent"
@@ -25,7 +24,7 @@
             app:titleCentered="true"
             app:titleTextColor="#FFFFFF" />
 
-        <!-- 🔽 Scroll em todo o conteúdo abaixo da Toolbar -->
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -40,7 +39,6 @@
                 android:padding="8dp"
                 android:background="#FFFFFF">
 
-                <!-- Título da seção -->
                 <LinearLayout
                     android:id="@+id/layLivrosEmpRealizados"
                     android:layout_width="match_parent"
@@ -58,7 +56,6 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
-                <!-- Card principal com infos -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardInfos"
                     android:layout_width="match_parent"
@@ -143,7 +140,6 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- Card com quantidades -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardQtds"
                     android:layout_width="match_parent"
