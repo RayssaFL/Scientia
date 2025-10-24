@@ -27,7 +27,6 @@ class TelaLogin_Adm : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        super.onStart()
         btnEntrar.setOnClickListener {
             validarCadastro()
         }

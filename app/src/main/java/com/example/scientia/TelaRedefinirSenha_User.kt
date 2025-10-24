@@ -16,7 +16,6 @@ class TelaRedefinirSenha_User : AppCompatActivity() {
     private lateinit var btnrs: Button
     private lateinit var btnV: ImageButton
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -44,7 +43,7 @@ class TelaRedefinirSenha_User : AppCompatActivity() {
         if (emailTexto.isEmpty()) {
             Toast.makeText(this, "Preencha o campo", Toast.LENGTH_SHORT).show()
         }
-        else if (emailTexto == "oioioi@gmail.com") {
+        else if (emailTexto == "123@gmail.com") {
             mostrarPopupLinkEnviado()
         }
         else {
