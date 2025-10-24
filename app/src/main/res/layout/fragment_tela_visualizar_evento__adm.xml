@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="#DC63C1E6"
+            app:cardBackgroundColor="@color/AzulClaroFundo"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -43,9 +43,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Título:"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:textColor="@android:color/black" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="#DC63C1E6"
+            app:cardBackgroundColor="@color/AzulClaroFundo"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -76,17 +76,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Descrição:"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:textColor="@android:color/black" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Realização de uma leitura guiada em grupo."
-                    android:textSize="16sp"
                     android:layout_marginTop="4dp"
-                    android:textColor="@android:color/black" />
+                    android:text="Realização de uma leitura guiada em grupo."
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -95,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="#DC63C1E6"
+            app:cardBackgroundColor="@color/AzulClaroFundo"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -109,17 +109,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Mediadores:"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:textColor="@android:color/black" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rachel de Queiroz"
-                    android:textSize="16sp"
                     android:layout_marginTop="4dp"
-                    android:textColor="@android:color/black" />
+                    android:text="Rachel de Queiroz"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -128,7 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="#DC63C1E6"
+            app:cardBackgroundColor="@color/AzulClaroFundo"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -142,17 +142,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Data:"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:textColor="@android:color/black" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="02/10/2025"
-                    android:textSize="16sp"
                     android:layout_marginTop="4dp"
-                    android:textColor="@android:color/black" />
+                    android:text="02/10/2025"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -161,7 +161,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="#DC63C1E6"
+            app:cardBackgroundColor="@color/AzulClaroFundo"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
@@ -175,17 +175,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Horário:"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp"
-                    android:textColor="@android:color/black" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="14:00h"
-                    android:textSize="16sp"
                     android:layout_marginTop="4dp"
-                    android:textColor="@android:color/black" />
+                    android:text="14:00h"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

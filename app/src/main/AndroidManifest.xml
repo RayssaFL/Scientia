@@ -16,9 +16,6 @@
             android:name=".TelaBarraFixa_Adm"
             android:exported="false" />
         <activity
-            android:name=".TelaDescLivroAvaliacoes_User"
-            android:exported="false" />
-        <activity
             android:name=".TelaCadastro_User"
             android:exported="false" />
         <activity
@@ -37,19 +34,10 @@
             android:name=".TelaMenu_User"
             android:exported="true" />
         <activity
-            android:name=".TelaAdicionarEvento_Adm"
-            android:exported="true" />
-        <activity
-            android:name=".TelaEditarEvento_Adm"
-            android:exported="true" />
-        <activity
-            android:name=".TelaEditarInfoLivro_Adm"
-            android:exported="true" />
-        <activity
-            android:name=".TelaInicialDiv"
+            android:name=".TelaBarraFixa_User"
             android:exported="true"/>
         <activity
-            android:name=".TelaBarraFixa_User"
+            android:name=".TelaInicialDiv"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

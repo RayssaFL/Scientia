@@ -41,7 +41,7 @@ class TelaNotificacoes_User : Fragment() {
                 "Você devolveu o livro com sucesso."
             )
         )
+        val adapter = NotificacaoAdapter(notificacoesUser)
+        recyclerView.adapter = adapter
     }
-
-
 }

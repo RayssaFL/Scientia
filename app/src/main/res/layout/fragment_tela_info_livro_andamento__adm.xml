@@ -41,9 +41,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/AzulClaroFundo"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="#ADD8E6">
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -74,36 +74,36 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Título do Livro"
+                                android:textColor="@android:color/black"
                                 android:textSize="18sp"
-                                android:textStyle="bold"
-                                android:textColor="@android:color/black" />
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/textViewAutor"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Autor"
-                                android:textSize="16sp"
                                 android:layout_marginTop="4dp"
-                                android:textColor="@android:color/black" />
+                                android:text="Autor"
+                                android:textColor="@android:color/black"
+                                android:textSize="16sp" />
 
                             <TextView
                                 android:id="@+id/textViewAno"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Ano"
-                                android:textSize="16sp"
                                 android:layout_marginTop="4dp"
-                                android:textColor="@android:color/black" />
+                                android:text="Ano"
+                                android:textColor="@android:color/black"
+                                android:textSize="16sp" />
 
                             <TextView
                                 android:id="@+id/textViewIdLivro"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ID: 123"
-                                android:textSize="14sp"
                                 android:layout_marginTop="4dp"
-                                android:textColor="@android:color/black" />
+                                android:text="ID: 123"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -112,10 +112,10 @@
                         android:id="@+id/textViewDescricao"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
                         android:text="Descrição do livro"
-                        android:textSize="15sp"
                         android:textColor="@android:color/black"
-                        android:layout_marginTop="12dp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -124,9 +124,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/AzulClaroFundo"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="#ADD8E6">
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -138,18 +138,18 @@
                         android:id="@+id/textViewQuantidadeTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
                         android:text="Quantidade Total: 0"
-                        android:textSize="16sp"
                         android:textColor="@android:color/black"
-                        android:layout_marginBottom="8dp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textViewQuantidadeDisponivel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Quantidade Disponível: 0"
-                        android:textSize="16sp"
-                        android:textColor="@android:color/black" />
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -158,9 +158,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/AzulClaroFundo"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="#ADD8E6">
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -171,7 +171,7 @@
                     <com.example.scientia.NonScrollRecyclerView
                         android:id="@+id/recyclerUsuarios"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

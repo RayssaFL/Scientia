@@ -15,7 +15,7 @@ class TelaCadastro_User : AppCompatActivity() {
     lateinit var confirmarSenha: EditText
     lateinit var btnCadastrar: Button
 
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_cadastro_user)
@@ -29,6 +29,7 @@ class TelaCadastro_User : AppCompatActivity() {
         }
     }
 
+
     private fun compararSenhas() {
         val senhaStr = senha.text.toString()
         val confirmarStr = confirmarSenha.text.toString()
@@ -38,17 +39,16 @@ class TelaCadastro_User : AppCompatActivity() {
             return
         }
 
-        if (senhaStr.length < 4) {
-            Toast.makeText(this, "A senha deve ter pelo menos 4 caracteres", Toast.LENGTH_SHORT).show()
+        if (senhaStr.length < 6) {
+            Toast.makeText(this, "A senha deve ter pelo menos 6 caracteres", Toast.LENGTH_SHORT).show()
             return
         }
 
         if (senhaStr == confirmarStr) {
             Toast.makeText(this, "Senhas coincidem! Cadastro concluído.", Toast.LENGTH_SHORT).show()
 
-            val intent = Intent(this, TelaMenu_User::class.java)
+            val intent = Intent(this, TelaBarraFixa_User::class.java)
             startActivity(intent)
-
             finish()
         } else {
             Toast.makeText(this, "As senhas não coincidem!", Toast.LENGTH_SHORT).show()

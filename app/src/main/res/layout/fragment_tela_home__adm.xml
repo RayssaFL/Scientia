@@ -12,7 +12,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#B3D9FF">
+        android:background="@color/AzulClaroFundo">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -41,9 +41,9 @@
             android:id="@+id/fragment_container_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:elevation="8dp"
             tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="414dp"
-            android:elevation="8dp" >
+            tools:layout_editor_absoluteY="414dp">
 
         </FrameLayout>
 

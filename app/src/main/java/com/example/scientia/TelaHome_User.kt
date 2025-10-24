@@ -53,7 +53,7 @@ class TelaHome_User : Fragment() {
 
         btnNotificacao.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.containerFrameLayout, TelaEventos_User())
+                .replace(R.id.containerFrameLayout, TelaNotificacoes_User())
                 .addToBackStack(null)
                 .commit()
         }

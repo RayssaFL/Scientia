@@ -15,7 +15,7 @@ class NotificacaoAdapter(
     inner class NotificacaoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val fotoNoti: ImageView = view.findViewById(R.id.imgNotificacao)
         val tituloAviso: TextView = view.findViewById(R.id.TituloAviso)
-        val descAviso: TextView = view.findViewById(R.id.descNotificacao)
+        val descAviso: TextView = view.findViewById(R.id.DescAviso)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificacaoViewHolder {
