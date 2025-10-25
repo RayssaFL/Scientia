@@ -23,10 +23,14 @@ class TelaPerfil_Adm : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Botão voltar funcional
+
         val toolbar = view.findViewById<MaterialToolbar>(R.id.BarraNavegaçãoPerfil)
         toolbar.setNavigationOnClickListener {
-            parentFragmentManager.popBackStack() // volta ao fragment anterior
+            val fragmentHome = TelaHome_Adm()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.containerFrameLayout, fragmentHome)
+                .addToBackStack(null)
+                .commit()
         }
 
     }

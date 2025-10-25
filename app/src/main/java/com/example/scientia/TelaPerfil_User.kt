@@ -18,7 +18,11 @@ class TelaPerfil_User : Fragment() {
 
         val toolbar = view.findViewById<MaterialToolbar>(R.id.BarraNavegaçãoPerfil)
         toolbar.setNavigationOnClickListener {
-            parentFragmentManager.popBackStack()
+            val fragmentHome = TelaHome_User()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.containerFrameLayout, fragmentHome)
+                .addToBackStack(null)
+                .commit()
         }
 
         return view

@@ -37,11 +37,11 @@ class TelaConfiguracao_Adm : Fragment() {
         fonteSize = view.findViewById(R.id.barraTamanhoFonte)
         sair = view.findViewById(R.id.sairAdm)
 
-        btnBarranav.setNavigationOnClickListener(object : OnClickListener {
-            override fun onClick(v: View?) {
-                requireActivity().onBackPressedDispatcher.onBackPressed()
-            }
-        })
+        btnBarranav.setNavigationOnClickListener {
+            val intent = Intent(requireContext(), TelaBarraFixa_Adm::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
 
         tema.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {

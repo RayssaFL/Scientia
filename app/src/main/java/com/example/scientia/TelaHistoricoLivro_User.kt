@@ -1,5 +1,6 @@
 package com.example.scientia
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,7 +26,9 @@ class TelaHistoricoLivro_User : Fragment() {
 
         val toolbar = view.findViewById<Toolbar>(R.id.toolbarLivrosTotaisHistorico)
         toolbar.setNavigationOnClickListener {
-            parentFragmentManager.popBackStack()
+            val intent = Intent(requireContext(), TelaBarraFixa_User::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerLivrosTotaisHistorico)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

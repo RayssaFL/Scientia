@@ -38,11 +38,11 @@ class TelaConfiguracao_User : Fragment() {
         fonteSizeUser = view.findViewById(R.id.barraTamanhoFonte_User)
         sairUser = view.findViewById(R.id.sairLayout)
 
-        btnBarranavUser.setNavigationOnClickListener(object : OnClickListener {
-            override fun onClick(v: View?) {
-                requireActivity().onBackPressedDispatcher.onBackPressed()
-            }
-        })
+        btnBarranavUser.setNavigationOnClickListener {
+            val intent = Intent(requireContext(), TelaBarraFixa_User::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
 
         temaUser.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
