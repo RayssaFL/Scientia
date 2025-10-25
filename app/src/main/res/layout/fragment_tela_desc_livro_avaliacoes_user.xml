@@ -160,7 +160,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/AzulClaroFundo"
-                android:clickable="false"
                 android:src="@drawable/filled_star" />
 
             <ImageButton
@@ -169,7 +168,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/AzulClaroFundo"
-                android:clickable="false"
                 android:src="@drawable/filled_star" />
 
             <ImageButton
@@ -178,7 +176,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/AzulClaroFundo"
-                android:clickable="false"
                 android:src="@drawable/filled_star" />
 
             <ImageButton
@@ -187,7 +184,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/AzulClaroFundo"
-                android:clickable="false"
                 android:src="@drawable/unfilled_star" />
 
             <ImageButton
@@ -196,7 +192,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/AzulClaroFundo"
-                android:clickable="false"
                 android:src="@drawable/unfilled_star" />
 
         </LinearLayout>

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import android.util.Log
 
 class BookAdapter(private val fragment: Fragment) :
     ListAdapter<BookFull, BookAdapter.BookVH>(DIFF) {
@@ -65,6 +66,8 @@ class BookAdapter(private val fragment: Fragment) :
         }
 
         private fun abrirDetalhes(item: BookFull) {
+            Log.d("BookClick", "Book clicked: ${item.title}")
+            Log.d("BookClick", "Opening fragment: BookDetailsFragment")
             val bundle = Bundle()
             bundle.putSerializable("book", item)
             val fragmentDetail = BookDetailsFragment()
