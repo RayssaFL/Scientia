@@ -33,27 +33,27 @@ class TelaDescEmpAberto_User : Fragment() {
             parentFragmentManager.popBackStack()
         }
 
-        val stars = listOf(
-            view.findViewById<ImageButton>(R.id.imageButton1),
-            view.findViewById<ImageButton>(R.id.imageButton2),
-            view.findViewById<ImageButton>(R.id.imageButton3),
-            view.findViewById<ImageButton>(R.id.imageButton4),
-            view.findViewById<ImageButton>(R.id.imageButton5)
-        )
-
-        val filledStar = R.drawable.filled_star
-        val unfilledStar = R.drawable.unfilled_star
-
-        stars.forEachIndexed {index, button ->
-            button.setOnClickListener {
-                for (i in stars.indices) {
-                    if (i <= index) {
-                        stars[i].setImageResource(filledStar)
-                    } else {
-                        stars[i].setImageResource(unfilledStar)
-                    }
-                }
-            }
-        }
+//        val stars = listOf(
+//            view.findViewById<ImageButton>(R.id.imageButton1),
+//            view.findViewById<ImageButton>(R.id.imageButton2),
+//            view.findViewById<ImageButton>(R.id.imageButton3),
+//            view.findViewById<ImageButton>(R.id.imageButton4),
+//            view.findViewById<ImageButton>(R.id.imageButton5)
+//        )
+//
+//        val filledStar = R.drawable.filled_star
+//        val unfilledStar = R.drawable.unfilled_star
+//
+//        stars.forEachIndexed {index, button ->
+//            button.setOnClickListener {
+//                for (i in stars.indices) {
+//                    if (i <= index) {
+//                        stars[i].setImageResource(filledStar)
+//                    } else {
+//                        stars[i].setImageResource(unfilledStar)
+//                    }
+//                }
+//            }
+//        }
     }
 }

@@ -41,9 +41,16 @@ class TelaContato_User : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val toolbar = view.findViewById<Toolbar>(R.id.BarraNavegacaoContato)
+        val toolbar = view.findViewById<com.google.android.material.appbar.MaterialToolbar>(
+            R.id.BarraNavegacaoContato
+        )
+
         toolbar.setNavigationOnClickListener {
-            parentFragmentManager.popBackStack()
+            val targetFragment = TelaHome_User()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.containerFrameLayout, targetFragment)
+                .addToBackStack(null)
+                .commit()
         }
     }
 
